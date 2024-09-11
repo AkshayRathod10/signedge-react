@@ -1,0 +1,41 @@
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype'); /* Corrected path */
+}
+
+body {
+  font-family: Poppins;
+  color: #000;
+}
+
+
+.overlay-video {
+  position: absolute;
+  top: 36%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  height: auto;
+  border: 5px solid #000;
+  z-index: 999;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .overlay-video {
+    width: 30%; /* Adjust based on smaller screen sizes */
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-video {
+    width: 40%; /* Adjust based on very small screen sizes */
+  }
+}
