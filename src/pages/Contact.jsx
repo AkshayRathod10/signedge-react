@@ -2,11 +2,107 @@ import React from 'react'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Title } from '../components/Title';
-import { FaPhone, FaEnvelope, FaMapMarker } from 'react-icons/fa';
+import { FaPhone, FaPhoneSquare, FaEnvelope, FaMapMarker } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 export const Contact = () => {
+
+    const [numberOne, setnumberOne] = useState(generateRandomNumber());
+    const [numberTwo, setnumberTwo] = useState(generateRandomNumber());
+
+    function generateRandomNumber() {
+        return Math.floor(Math.random() * 90) + 10;
+    }
+
+    const handleGenerateNumber = () => {
+        setRandomNumber(generateRandomNumber());
+    };
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+        captcha: '',
+    });
+
+    const [errors, setErrors] = useState({
+        name: '',
+        email: '',
+        message: '',
+        captcha: '',
+    });
+
+    const handleChange = (e) => {
+        const { id, value } = e.target;
+        setFormData((prev) => ({ ...prev, [id]: value }));
+    };
+
+    const validateForm = () => {
+        let isValid = true;
+        let newErrors = {};
+
+        if (!formData.name) {
+            newErrors.name = 'Name is required';
+            isValid = false;
+        }
+
+        if (!formData.email) {
+            newErrors.email = 'Email is required';
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email is invalid';
+            isValid = false;
+        }
+
+        if (!formData.message) {
+            newErrors.message = 'Message is required';
+            isValid = false;
+        }
+        console.log(formData.captcha, (numberOne + numberTwo))
+        if (formData.captcha !== (numberOne + numberTwo)) {
+            newErrors.captcha = 'CAPTCHA is incorrect';
+            isValid = false;
+        }
+
+        setErrors(newErrors);
+        return isValid;
+    };
+
+    // Handle form submission
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (validateForm()) {
+            try {
+                await axios.post('/api/sendMail', formData);
+                alert('Message sent successfully!');
+                setFormData({
+                    name: '',
+                    email: '',
+                    message: '',
+                    captcha: '',
+                });
+                setErrors({});
+                setNumberOne(generateRandomNumber());
+                setNumberTwo(generateRandomNumber());
+            } catch (error) {
+                console.error('Error sending message:', error);
+                alert('Failed to send message.');
+            }
+        }
+    };
+
+
     return (
         <>
+            <Helmet>
+                <title>SignEdge Digitech Pvt Ltd - Reach Us</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="SignEdge Digitech Pvt Ltd" />
+                <meta property="og:description" content="." />
+            </Helmet>
             <Header />
             <Title name="Reach Us" bg="#f2663a" />
             <main className='container mx-auto'>
@@ -22,24 +118,30 @@ export const Contact = () => {
                     <div>
                         <h4 className="text-lg font-bold mb-4">Contact Info</h4>
                         <div className="mb-4">
-                            <i className="fas fa-phone text-yellow-500"></i>{' '}
-                            <a href="tel:919833035262">
-                                +91 9833035262
-                            </a>{' '}
-                            ,{' '}
-                            <a href="tel:9667667826">
-                                +91 9667667826
-                            </a>
+                            <div className="flex items-center space-x-2">
+                                <div className='text-xl text-[#fecd08]'>
+                                    <FaPhoneSquare />
+                                </div>
+                                <div>
+                                    <a href="tel:919833035262" className="mr-2">+91 9833035262</a>,{' '}
+                                    <a href="tel:9667667826">+91 9667667826</a>
+                                </div>
+                            </div>
                         </div>
                         <div className="mb-4">
-                            <i className="fas fa-envelope text-green-500"></i>{' '}
-                            <a href="mailto:info@signedgeindia.com" >
-                                info@signedgeindia.com
-                            </a>
+                            <div className="flex items-center space-x-2">
+                                <div className='text-xl text-[#99ca3c]'>
+                                    <FaEnvelope />
+                                </div>
+                                <div>
+                                    <a href="mailto:info@signedgeindia.com" >
+                                        info@signedgeindia.com
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                         <h4 className="text-lg font-bold mt-6">Address</h4>
                         <div className="mb-4">
-                            <i className="fas fa-map-marker-alt text-pink-500"></i>{' '}
                             A-432, 2nd Floor, Vashi Plaza, Vashi, Navi Mumbai -400703
                         </div>
                         <iframe
@@ -55,7 +157,7 @@ export const Contact = () => {
                     </div>
 
                     {/* Form Section */}
-                    <div>
+                    <form onSubmit={handleSubmit}>
                         <div className="mb-5">
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                                 Name
@@ -64,9 +166,11 @@ export const Contact = () => {
                                 type="text"
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 id="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 placeholder="Your Name!"
                             />
-                            <div id="nameError" className="text-red-500 text-sm"></div>
+                            {errors.name && <div className="text-red-500 text-sm">{errors.name}</div>}
                         </div>
                         <div className="mb-5">
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
@@ -76,9 +180,11 @@ export const Contact = () => {
                                 type="email"
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 id="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="Your Email!"
                             />
-                            <div id="emailError" className="text-red-500 text-sm"></div>
+                            {errors.email && <div className="text-red-500 text-sm">{errors.email}</div>}
                         </div>
                         <div className="mb-5">
                             <label htmlFor="message" className="block text-sm font-medium text-gray-700">
@@ -88,29 +194,33 @@ export const Contact = () => {
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                 id="message"
                                 rows="7"
+                                value={formData.message}
+                                onChange={handleChange}
                                 placeholder="Your Message!"
                             ></textarea>
-                            <div id="messageError" className="text-red-500 text-sm"></div>
+                            {errors.message && <div className="text-red-500 text-sm">{errors.message}</div>}
                         </div>
                         <div className="mb-5">
                             <div id="captcha" data-sum="15" className="mb-2">
-                                7 + 8 = ?
+                                <span>{numberOne}</span>  + <span>{numberTwo}</span>  = ?
                             </div>
                             <input
                                 type="text"
                                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                id="captchaInput"
+                                id="captcha"
+                                value={formData.captcha}
+                                onChange={handleChange}
                                 placeholder="Enter CAPTCHA"
                             />
-                            <div id="captchaError" className="text-red-500 text-sm"></div>
+                            {errors.captcha && <div className="text-red-500 text-sm">{errors.captcha}</div>}
                         </div>
                         <button
+                            type="submit"
                             className="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded"
-                            id="send"
                         >
                             Send
                         </button>
-                    </div>
+                    </form>
                 </div>
 
             </main>

@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Title } from '../components/Title';
 import CardList from '../components/CardList';
+import { Helmet } from 'react-helmet';
 
 export const Services = () => {
 
@@ -42,6 +43,12 @@ export const Services = () => {
 
     return (
         <>
+            <Helmet>
+                <title>SignEdge Digitech Pvt Ltd - Services</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="SignEdge Digitech Pvt Ltd" />
+                <meta property="og:description" content="." />
+            </Helmet>
             <Header />
             <Title name="Services" bg="#71d0da" />
             <main className='container mx-auto'>

@@ -2,10 +2,17 @@ import React from 'react'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Carousel from '../components/Carousel';
+import { Helmet } from 'react-helmet';
 
 export const Home = () => {
     return (
         <>
+            <Helmet>
+                <title>SignEdge Digitech Pvt Ltd - Home</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="SignEdge Digitech Pvt Ltd" />
+                <meta property="og:description" content="." />
+            </Helmet>
             <Header />
             <div className="banner">
                 <img src={`${import.meta.env.BASE_URL}assets/img/banner.jpg`} alt="Banner image" />

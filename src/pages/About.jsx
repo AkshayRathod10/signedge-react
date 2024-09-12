@@ -2,10 +2,17 @@ import React from 'react'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Title } from '../components/Title';
+import { Helmet } from 'react-helmet';
 
 export const About = () => {
     return (
         <>
+            <Helmet>
+                <title>SignEdge Digitech Pvt Ltd - About Us</title>
+                <meta name="description" content="" />
+                <meta property="og:title" content="SignEdge Digitech Pvt Ltd" />
+                <meta property="og:description" content="." />
+            </Helmet>
             <Header />
             <main>
                 <Title name="About Us" bg="#fecd08" />
