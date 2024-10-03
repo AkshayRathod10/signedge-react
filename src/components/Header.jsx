@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaHome } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,18 +14,18 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
                 {/* Logo Section */}
                 <div className="w-36">
-                    <a href="/">
+                    <NavLink to="/">
                         <img src={`${import.meta.env.BASE_URL}assets/img/logo.png`} alt="Logo" className='' />
-                    </a>
+                    </NavLink>
                 </div>
 
                 {/* Navigation Section (hidden on mobile) */}
                 <nav className="hidden md:flex space-x-5 ml-auto text-[18px]">
-                    <a href="/" className="font-bold text-[#ed1890] text-[22px]">{<FaHome/>}</a>
-                    <a href="/products" className="font-bold text-[#99ca3c]">Products</a>
-                    <a href="/services" className="font-bold text-[#71d0da]">Services</a>
-                    <a href="/about-us" className="font-bold text-[#fecd08]">About Us</a>
-                    <a href="/contact-us" className="font-bold text-[#f2663a]">Reach Us</a>
+                    <NavLink to="/" className="font-bold text-[#ed1890] text-[22px]">{<FaHome/>}</NavLink>
+                    <NavLink to="/products" className="font-bold text-[#99ca3c]">Products</NavLink>
+                    <NavLink to="/services" className="font-bold text-[#71d0da]">Services</NavLink>
+                    <NavLink to="/about-us" className="font-bold text-[#fecd08]">About Us</NavLink>
+                    <NavLink to="/contact-us" className="font-bold text-[#f2663a]">Reach Us</NavLink>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -49,11 +50,11 @@ const Header = () => {
                         </button>
                     </div>
                     <nav className="flex flex-col items-center space-y-4 mt-4">
-                        <a href="/" className="text-[]" onClick={toggleMobileMenu}>Home</a>
-                        <a href="/products" className="text-[]" onClick={toggleMobileMenu}>Products</a>
-                        <a href="/services" className="text-[]" onClick={toggleMobileMenu}>Services</a>
-                        <a href="/about-us" className="text-[]" onClick={toggleMobileMenu}>About Us</a>
-                        <a href="/contact-us" className="text-[]" onClick={toggleMobileMenu}>Reach Us</a>
+                        <NavLink to="/" className="text-[]" onClick={toggleMobileMenu}>Home</NavLink>
+                        <NavLink to="/products" className="text-[]" onClick={toggleMobileMenu}>Products</NavLink>
+                        <NavLink to="/services" className="text-[]" onClick={toggleMobileMenu}>Services</NavLink>
+                        <NavLink to="/about-us" className="text-[]" onClick={toggleMobileMenu}>About Us</NavLink>
+                        <NavLink to="/contact-us" className="text-[]" onClick={toggleMobileMenu}>Reach Us</NavLink>
 
                     </nav>
                 </div>
