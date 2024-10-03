@@ -16,7 +16,7 @@ export const Home = () => {
             <Header />
             <div className="banner">
                 <img src={`${import.meta.env.BASE_URL}assets/img/banner.jpg`} alt="Banner image" />
-                <video
+                {/* <video
                     className="overlay-video"
                     id="videoElement"
                     autoPlay
@@ -26,7 +26,7 @@ export const Home = () => {
                 >
                     <source src={`${import.meta.env.BASE_URL}assets/videos/banner.mp4`} type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
             </div>
             <main className='my-9'>
                 <div className="container mx-auto text-justify">
