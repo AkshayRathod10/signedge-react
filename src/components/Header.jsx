@@ -14,7 +14,7 @@ const Header = () => {
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
                 {/* Logo Section */}
                 <div className="w-36">
-                    <NavLink to="/">
+                    <NavLink to="/" >
                         <img src={`${import.meta.env.BASE_URL}assets/img/logo.png`} alt="Logo" className='' />
                     </NavLink>
                 </div>
