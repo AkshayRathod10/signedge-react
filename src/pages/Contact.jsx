@@ -6,14 +6,15 @@ import { FaPhone, FaPhoneSquare, FaEnvelope, FaMapMarker } from 'react-icons/fa'
 import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const Contact = () => {
 
-    const [numberOne, setnumberOne] = useState(generateRandomNumber());
-    const [numberTwo, setnumberTwo] = useState(generateRandomNumber());
+    const [numberOne, setNumberOne] = useState(generateRandomNumber());
+    const [numberTwo, setNumberTwo] = useState(generateRandomNumber());
 
     function generateRandomNumber() {
-        return Math.floor(Math.random() * 90) + 10;
+        return Math.floor(Math.random() * 9);
     }
 
     const handleGenerateNumber = () => {
@@ -61,7 +62,7 @@ export const Contact = () => {
             isValid = false;
         }
         console.log(formData.captcha, (numberOne + numberTwo))
-        if (formData.captcha !== (numberOne + numberTwo)) {
+        if (formData.captcha != (numberOne + numberTwo)) {
             newErrors.captcha = 'CAPTCHA is incorrect';
             isValid = false;
         }
@@ -76,8 +77,55 @@ export const Contact = () => {
 
         if (validateForm()) {
             try {
-                await axios.post('/api/sendMail', formData);
-                alert('Message sent successfully!');
+                let request = {  
+                    "sender":{  
+                       "name":"Signedge",
+                       "email":"admin@signedgeindia.com"
+                    },
+                    "to":[  
+                       {  
+                          "email": "akshayrathod9@gmail.com",
+                          "name":"Signedge"
+                       }
+                    ],
+                    "subject":"Enquiry Received – SignEdge Website",
+                    "htmlContent":`<!DOCTYPE html>
+                    <html>
+                    <head>
+                        <style>
+                            body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
+                            .container { max-width: 600px; margin: 0 auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+                            h2 { color: #333; }
+                            p { font-size: 16px; color: #555; }
+                            .footer { margin-top: 20px; font-size: 14px; color: #888; text-align: center; }
+                        </style>
+                    </head>
+                    <body>
+                        <div class='container'>
+                            <h2>New Enquiry Received</h2>
+                            <p><strong>Name:</strong> ${formData.name}</p>
+                            <p><strong>Email:</strong> ${formData.email}</p>
+                            <p><strong>Message:</strong></p>
+                            <p>${formData.message}</p>
+                            <div class='footer'>
+                                <p>This is an automated email. Please do not reply.</p>
+                            </div>
+                        </div>
+                    </body>
+                    </html>`
+                 }
+                await axios.post(
+                    'https://api.brevo.com/v3/smtp/email',
+                    request,
+                    {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'accept': 'application/json',
+                            'api-key': import.meta.env.VITE_BREVO_API_KEY
+                        }
+                    }
+                );
+                toast.success('Message sent successfully!')
                 setFormData({
                     name: '',
                     email: '',
@@ -89,7 +137,7 @@ export const Contact = () => {
                 setNumberTwo(generateRandomNumber());
             } catch (error) {
                 console.error('Error sending message:', error);
-                alert('Failed to send message.');
+                toast.error("Failed to send message.")
             }
         }
     };
@@ -222,7 +270,7 @@ export const Contact = () => {
                         </button>
                     </form>
                 </div>
-
+                <ToastContainer />
             </main>
             <Footer />
         </>
