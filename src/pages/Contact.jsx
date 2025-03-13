@@ -17,11 +17,6 @@ export const Contact = () => {
         return Math.floor(Math.random() * 9);
     }
 
-    useEffect(() => {
-      console.log('asasa:',import.meta.env.VITE_BREVO_API_KEY)
-    }, [])
-    
-
     const handleGenerateNumber = () => {
         setRandomNumber(generateRandomNumber());
     };
