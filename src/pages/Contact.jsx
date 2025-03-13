@@ -89,7 +89,7 @@ export const Contact = () => {
                     },
                     "to":[  
                        {  
-                          "email": "akshayrathod9@gmail.com",
+                          "email": "info@signedgeindia.com",
                           "name":"Signedge"
                        }
                     ],
