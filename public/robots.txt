@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://www.signedgeindia.com/sitemap.xml
+Sitemap: https://signedgeindia.com/sitemap.xml
