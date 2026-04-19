@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -27,6 +27,53 @@
   --color-alabaster: #fbfbfb;
   --color-zumthor: #edf5ff;
   --color-socialicon: #d1d8e0;
+  /* Teal — based on #0bceb7 */
+  --color-teal-50: #e6faf8;
+  --color-teal-100: #c0f2ec;
+  --color-teal-200: #87e8df;
+  --color-teal-300: #4dddd0;
+  --color-teal-400: #1ed4c3;
+  --color-teal-500: #0bceb7; /* ← your brand color */
+  --color-teal-600: #09b09c;
+  --color-teal-700: #07897a;
+  --color-teal-800: #056358;
+  --color-teal-900: #033d36;
+
+  /* Amber — based on #f4b400 */
+  --color-amber-50: #fffbea;
+  --color-amber-100: #fff3c2;
+  --color-amber-200: #ffe780;
+  --color-amber-300: #ffd93d;
+  --color-amber-400: #ffc912;
+  --color-amber-500: #f4b400; /* ← your brand color */
+  --color-amber-600: #d49900;
+  --color-amber-700: #a87800;
+  --color-amber-800: #7c5800;
+  --color-amber-900: #503900;
+
+  /* Magenta — based on #d81b60 */
+  --color-magenta-50: #fce8f0;
+  --color-magenta-100: #f9c0d8;
+  --color-magenta-200: #f385b0;
+  --color-magenta-300: #eb4d88;
+  --color-magenta-400: #e22a72;
+  --color-magenta-500: #d81b60; /* ← your brand color */
+  --color-magenta-600: #b81552;
+  --color-magenta-700: #8f1040;
+  --color-magenta-800: #670b2e;
+  --color-magenta-900: #40071c;
+
+  /* Orange — based on #f4511e */
+  --color-orange-50: #fef0eb;
+  --color-orange-100: #fdd5c8;
+  --color-orange-200: #faa98f;
+  --color-orange-300: #f87d58;
+  --color-orange-400: #f66338;
+  --color-orange-500: #f4511e; /* ← your brand color */
+  --color-orange-600: #d4400f;
+  --color-orange-700: #a6320c;
+  --color-orange-800: #782408;
+  --color-orange-900: #4a1605;
 
   --text-metatitle: 12px, 20px;
   --text-sectiontitle: 14px, 22px;

@@ -21,7 +21,7 @@ const About = () => {
             accent="#26A69A"
             accentMuted="rgba(38,166,154,0.12)"
           />
-          <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d1f25] to-[#1a3a44] px-8 py-8 md:flex-row xl:px-16">
+          <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-teal-100 px-8 py-8 md:flex-row xl:px-16">
             {/* Decorative rings */}
             <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
             <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
