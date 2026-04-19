@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ReachUs() {
   return (
-    <main>
+    <>
       <Contact />
-    </main>
+    </>
   );
 }

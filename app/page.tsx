@@ -14,28 +14,34 @@ import Blog from "@/components/Blog";
 import Testimonial from "@/components/Testimonial";
 
 export const metadata: Metadata = {
-  title: "SignEdge India Pvt Ltd - Home",
-
-  // other metadata
-  description: "This is Home for SignEdge India Pvt Ltd."
+  title: "SignEdge Digitech Pvt Ltd - Home",
+  description: "Your company description here",
+  openGraph: {
+    title: "SignEdge Digitech Pvt Ltd",
+    description: "Your OG description",
+    url: "https://www.signedgeindia.com",
+    siteName: "SignEdge Digitech",
+    // images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
 };
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
-      <Brands />
-      <Feature />
-      <About />
-      <FeaturesTab />
-      <FunFact />
-      <Integration />
-      <CTA />
-      <FAQ />
-      <Testimonial />
-      <Pricing />
-      <Contact />
+      {/* <Brands /> */}
+      {/* <Feature /> */}
+      {/* <About /> */}
+      {/* <FeaturesTab /> */}
+      {/* <FunFact /> */}
+      {/* <Integration /> */}
+      {/* <CTA /> */}
+      {/* <FAQ /> */}
+      {/* <Testimonial /> */}
+      {/* <Pricing /> */}
+      {/* <Contact /> */}
       <Blog />
-    </main>
+    </>
   );
 }

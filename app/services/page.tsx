@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Feature from "@/components/Features";
+import Services from "@/components/Services";
 
 export const metadata: Metadata = {
   title: "SignEdge India Pvt Ltd - Services",
@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   description: "This is a Services page for SignEdge India Pvt Ltd."
 };
 
-export default function Products() {
+export default function ServicesPage() {
   return (
-    <main>
-      <Feature />
-    </main>
+    <>
+      <Services />
+    </>
   );
 }

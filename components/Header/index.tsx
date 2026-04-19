@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import logo from "../../assets/images/signage-logo-crop.svg";
+import logoWhite from "../../assets/images/signage-white-logo.svg";
 
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
@@ -29,28 +31,21 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-99999 w-full py-7 ${
+      id="site-header"
+      className={`fixed left-0 top-0 z-99999 w-full py-7 border border-stroke ${
         stickyMenu
           ? "bg-white py-4! shadow-sm transition duration-100 dark:bg-black"
           : ""
       }`}
     >
-      <div className="relative mx-auto max-w-c-1390 items-center justify-between px-4 md:px-8 xl:flex 2xl:px-0">
+      <div className="relative mx-auto max-w-c-1390 items-center justify-between ml-auto px-4 md:px-8 xl:flex 2xl:px-0">
         <div className="flex w-full items-center justify-between xl:w-1/4">
           <a href="/">
             <Image
-              src="/images/logo/logo.png"
+              src={logo}
               alt="logo"
-              width={119.03}
-              height={30}
-              className="hidden w-full dark:block"
-            />
-            <Image
-              src="/images/logo/logo.png"
-              alt="logo"
-              width={119.03}
-              height={30}
-              className="w-full dark:hidden"
+              width={150.03}
+              className="dark:hidden"
             />
           </a>
 
@@ -95,9 +90,9 @@ const Header = () => {
           {/* <!-- Hamburger Toggle BTN --> */}
         </div>
 
-        {/* Nav Menu Start   */}
+        {/* Nav Menu Start */}
         <div
-          className={`invisible h-0 w-full items-center justify-between xl:visible xl:flex xl:h-auto xl:w-full ${
+          className={`invisible h-0 w-full items-center justify-end xl:visible xl:flex xl:h-auto xl:w-auto ${
             navigationOpen &&
             "navbar visible! mt-4 h-auto max-h-[400px] rounded-md bg-white p-7.5 shadow-solid-5 dark:bg-blacksection xl:h-auto xl:p-0 xl:shadow-none xl:dark:bg-transparent"
           }`}
@@ -150,10 +145,6 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-
-          <div className="mt-7 flex items-center gap-6 xl:mt-0">
-            <ThemeToggler />
-          </div>
         </div>
       </div>
     </header>

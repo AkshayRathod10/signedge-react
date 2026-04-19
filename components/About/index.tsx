@@ -2,25 +2,63 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import accessoryScene from "../../assets/images/SignEdge-Accessories icon.svg";
+import PageHero from "../Common/PageHero";
 
 const About = () => {
   return (
     <>
       {/* <!-- ===== About Start ===== --> */}
-      <section className="overflow-hidden pb-20 lg:pb-25 xl:pb-30">
-        <div className="mx-auto max-w-c-1235 px-4 md:px-8 xl:px-0">
+      <section className="overflow-hidden py-10">
+        {/* About Hero Banner */}
+
+        <div className="mx-auto px-8">
+          <PageHero
+            badge="About Us"
+            heading="Redefining Signage"
+            accentText="Across India"
+            description="SignEdge Digitech is a leading manufacturer trusted by thousands of businesses for quality and innovation."
+            accent="#26A69A"
+            accentMuted="rgba(38,166,154,0.12)"
+          />
+          <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d1f25] to-[#1a3a44] px-8 py-8 md:flex-row xl:px-16">
+            {/* Decorative rings */}
+            <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
+            <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
+
+            {/* Left: Text */}
+            <div className="z-10 max-w-lg text-center md:text-left">
+              <span className="mb-4 inline-block rounded-full bg-[#0bceb7]/15 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-[#0bceb7]">
+                About Us
+              </span>
+              <h2 className="mb-4 text-3xl font-bold leading-tight text-white xl:text-4xl">
+                Redefining Signage{" "}
+                <span className="text-[#0bceb7]">Across India</span>
+              </h2>
+              <p className="text-base leading-relaxed text-white/60">
+                SignEdge Digitech is a leading manufacturer and supplier of
+                premium signage components — trusted by thousands of businesses
+                for quality, reliability, and innovation that stands out in
+                every environment.
+              </p>
+            </div>
+
+            {/* Right: Illustration */}
+            <div className="z-10 mt-10 md:mt-0">
+              <Image
+                src={accessoryScene}
+                alt="About SignEdge"
+                width={340}
+                height={216}
+                className="drop-shadow-2xl"
+              />
+            </div>
+          </div>
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  x: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
+                hidden: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -30,28 +68,22 @@ const About = () => {
             >
               <Image
                 src="/images/about/about-light-01.png"
-                alt="About"
+                alt="About SignEdge"
                 className="dark:hidden"
                 fill
               />
               <Image
                 src="/images/about/about-dark-01.png"
-                alt="About"
+                alt="About SignEdge"
                 className="hidden dark:block"
                 fill
               />
             </motion.div>
+
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  x: 20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
+                hidden: { opacity: 0, x: 20 },
+                visible: { opacity: 1, x: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -59,21 +91,15 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_right md:w-1/2"
             >
-              <span className="font-medium uppercase text-black dark:text-white">
-                <span className="mb-4 mr-4 inline-flex rounded-full bg-meta px-4.5 py-1 text-metatitle uppercase text-white ">
-                  New
-                </span>{" "}
-                SaaS Boilerplate for Next.js
-              </span>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                A Complete Solution for
-                <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg dark:before:bg-titlebgdark">
-                  SaaS Startup
-                </span>
+                {"India's"} Trusted Partner in Digital Signage
               </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
+              <p className="text-base leading-relaxed text-body-color">
+                At SignEdge Digitech, we design and deliver precision-engineered
+                signage solutions that help businesses communicate boldly and
+                effectively. From retail and hospitality to corporate and
+                outdoor — we bring your brand to life with technology built to
+                perform.
               </p>
 
               <div className="mt-7.5 flex items-center gap-5">
@@ -84,11 +110,15 @@ const About = () => {
                 </div>
                 <div className="w-3/4">
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    React 18, Next.js 13 and TypeScript
+                    End-to-End Signage Expertise
                   </h3>
-                  <p>Ut ultricies lacus non fermentum ultrices.</p>
+                  <p className="text-sm text-body-color">
+                    From concept and design to manufacturing and on-site
+                    installation — we handle every stage in-house.
+                  </p>
                 </div>
               </div>
+
               <div className="mt-7.5 flex items-center gap-5">
                 <div className="flex h-15 w-15 items-center justify-center rounded-[50%] border border-stroke dark:border-strokedark dark:bg-blacksection">
                   <p className="text-metatitle2 font-semibold text-black dark:text-white">
@@ -97,9 +127,12 @@ const About = () => {
                 </div>
                 <div className="w-3/4">
                   <h3 className="mb-0.5 text-metatitle2 text-black dark:text-white">
-                    Fully Customizable
+                    Built for Every Environment
                   </h3>
-                  <p>consectetur adipiscing elit fermentum ultricies.</p>
+                  <p className="text-sm text-body-color">
+                    Our products are tested and certified for indoor, outdoor,
+                    and harsh-weather conditions across all industries.
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -114,15 +147,8 @@ const About = () => {
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  x: -20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
+                hidden: { opacity: 0, x: -20 },
+                visible: { opacity: 1, x: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -130,18 +156,18 @@ const About = () => {
               viewport={{ once: true }}
               className="animate_left md:w-1/2"
             >
-              <h4 className="font-medium uppercase text-black dark:text-white">
-                Launch Your SaaS Fast
-              </h4>
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
-                Packed with All Essential {"   "}
+                A Decade of Signage{" "}
                 <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
-                  Integrations
+                  Innovation
                 </span>
               </h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                ultricies lacus non fermentum ultrices. Fusce consectetur le.
+              <p className="text-base leading-relaxed text-body-color">
+                Founded with a mission to set new standards in the signage
+                industry, SignEdge Digitech has grown into one of {"India's"}{" "}
+                most trusted manufacturers and suppliers of LED signage
+                components, flex channels, power systems, and display
+                accessories — serving thousands of businesses nationwide.
               </p>
               <div>
                 <a
@@ -149,7 +175,7 @@ const About = () => {
                   className="group mt-7.5 inline-flex items-center gap-2.5 text-black hover:text-primary dark:text-white dark:hover:text-primary"
                 >
                   <span className="duration-300 group-hover:pr-2">
-                    Know More
+                    Our Story
                   </span>
                   <svg
                     width="14"
@@ -162,17 +188,11 @@ const About = () => {
                 </a>
               </div>
             </motion.div>
+
             <motion.div
               variants={{
-                hidden: {
-                  opacity: 0,
-                  x: 20,
-                },
-
-                visible: {
-                  opacity: 1,
-                  x: 0,
-                },
+                hidden: { opacity: 0, x: 20 },
+                visible: { opacity: 1, x: 0 },
               }}
               initial="hidden"
               whileInView="visible"
@@ -182,13 +202,13 @@ const About = () => {
             >
               <Image
                 src="./images/about/about-light-02.svg"
-                alt="About"
+                alt="SignEdge Innovation"
                 className="dark:hidden"
                 fill
               />
               <Image
                 src="./images/about/about-dark-02.svg"
-                alt="About"
+                alt="SignEdge Innovation"
                 className="hidden dark:block"
                 fill
               />

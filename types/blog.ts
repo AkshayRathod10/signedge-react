@@ -8,12 +8,9 @@ export type Author = {
 
 export type Blog = {
   _id: number;
+  mainImage: string;
   title: string;
-  slug?: any;
-  metadata?: string;
-  body?: string;
-  mainImage?: any;
-  author?: Author;
-  tags?: string[];
-  publishedAt?: string;
+  metadata: string;
+  tagColor?: { bg: string; text: string; dot: string };
+  extraInfo?: { label: string; value: string }[];
 };

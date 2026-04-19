@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import logo from "../../assets/images/signage-logo-crop.svg"
 
 const Footer = () => {
   return (
@@ -32,7 +33,7 @@ const Footer = () => {
                   <Image
                     width={110}
                     height={80}
-                    src="/images/logo/logo.png"
+                    src={logo}
                     alt="Logo"
                     className="dark:hidden"
                   />
@@ -86,7 +87,7 @@ const Footer = () => {
                   <ul>
                     <li>
                       <a
-                        href="#"
+                        href="/"
                         className="mb-3 inline-block hover:text-primary"
                       >
                         Home
@@ -94,32 +95,32 @@ const Footer = () => {
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/products"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Product
+                        Products
                       </a>
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/services"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Careers
+                        Services
                       </a>
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="/about-us"
                         className="mb-3 inline-block hover:text-primary"
                       >
-                        Pricing
+                        About Us
                       </a>
                     </li>
                   </ul>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   variants={{
                     hidden: {
                       opacity: 0,
@@ -175,7 +176,7 @@ const Footer = () => {
                       </a>
                     </li>
                   </ul>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   variants={{
@@ -245,7 +246,7 @@ const Footer = () => {
 
           {/* <!-- Footer Bottom --> */}
           <div className="flex flex-col flex-wrap items-center justify-center gap-5 border-t border-stroke py-7 dark:border-strokedark lg:flex-row lg:justify-between lg:gap-0">
-            <motion.div
+            {/* <motion.div
               variants={{
                 hidden: {
                   opacity: 0,
@@ -280,7 +281,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </motion.div>
+            </motion.div> */}
 
             <motion.div
               variants={{
@@ -324,7 +325,7 @@ const Footer = () => {
               className="animate_top"
             >
               <ul className="flex items-center gap-5">
-                <li>
+                {/* <li>
                   <a href="#" aria-label="social icon">
                     <svg
                       className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
@@ -347,8 +348,8 @@ const Footer = () => {
                       </defs>
                     </svg>
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#" aria-label="social icon">
                     <svg
                       className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
@@ -371,7 +372,7 @@ const Footer = () => {
                       </defs>
                     </svg>
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a href="#" aria-label="social icon">
                     <svg
@@ -396,7 +397,7 @@ const Footer = () => {
                     </svg>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#" aria-label="social icon">
                     <svg
                       className="fill-[#D1D8E0] transition-all duration-300 hover:fill-primary"
@@ -415,7 +416,7 @@ const Footer = () => {
                       </defs>
                     </svg>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </motion.div>
           </div>
