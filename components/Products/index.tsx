@@ -25,7 +25,6 @@ const Products = () => {
       <div className="mx-auto px-8">
         {/* Split Hero Banner */}
         {/* Hero Banner */}
-        
 
         <PageHero
           badge="Product Range"
@@ -44,38 +43,26 @@ const Products = () => {
           }
         />
 
-<div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 to-amber-100 px-8 py-8 md:flex-row xl:px-16">
-          {/* Decorative rings */}
-          <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
-          <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
-
-          {/* Left: Text */}
-          <div className="z-10 max-w-lg text-center md:text-left">
-            <span className="mb-4 inline-block rounded-full bg-[#0bceb7]/15 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-[#0bceb7]">
-              Product Range
-            </span>
-            <h2 className="mb-4 text-3xl font-bold leading-tight text-white xl:text-4xl">
-              Built for Signs.{" "}
-              <span className="text-[#0bceb7]">Engineered to Perform.</span>
-            </h2>
-            <p className="text-base leading-relaxed text-white/60">
-              Every SignEdge product is precision-crafted for the signage
-              industry — from robust LED modules to weatherproof accessories,
-              designed to deliver flawless results on every installation.
-            </p>
-          </div>
-
-          {/* Right: Illustration */}
-          <div className="z-10 mt-10 md:mt-0">
+        <PageHero
+          badge="Product Range"
+          heading="Built for Signs."
+          accentText="Engineered to Perform."
+          description="Every SignEdge product is precision-crafted for the signage industry — robust LED modules to weatherproof accessories."
+          background="linear-gradient(135deg, var(--color-amber-100) 0%, var(--color-amber-50) 60%, var(--color-amber-100) 100%)"
+          accent="var(--color-amber-500)"
+          accentMuted="rgba(244,180,0,0.18)"
+          headingColor="var(--color-amber-800)"
+          descriptionColor="var(--color-amber-700)"
+          badgeTextColor="var(--color-amber-800)"
+          right={
             <Image
               src={accessoryScene}
-              alt="SignEdge Products"
+              alt="Products"
               width={340}
               height={216}
-              className="drop-shadow-2xl"
             />
-          </div>
-        </div>
+          }
+        />
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">

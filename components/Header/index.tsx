@@ -134,8 +134,8 @@ const Header = () => {
                       href={`${menuItem.path}`}
                       className={
                         pathUrl === menuItem.path
-                          ? "text-primary hover:text-primary"
-                          : "hover:text-primary"
+                          ? "text-teal-500 hover:text-teal-500"
+                          : "hover:text-teal-500"
                       }
                     >
                       {menuItem.title}

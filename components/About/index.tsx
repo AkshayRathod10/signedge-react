@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import accessoryScene from "../../assets/images/SignEdge-Accessories icon.svg";
 import PageHero from "../Common/PageHero";
+import aboutImageOne from "../../assets/images/Image-2.jpg";
+import aboutImageTwo from "../../assets/images/2nd image.jpg";
 
 const About = () => {
   return (
@@ -21,39 +23,21 @@ const About = () => {
             accent="#26A69A"
             accentMuted="rgba(38,166,154,0.12)"
           />
-          <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-teal-100 px-8 py-8 md:flex-row xl:px-16">
-            {/* Decorative rings */}
-            <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
-            <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
 
-            {/* Left: Text */}
-            <div className="z-10 max-w-lg text-center md:text-left">
-              <span className="mb-4 inline-block rounded-full bg-[#0bceb7]/15 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-[#0bceb7]">
-                About Us
-              </span>
-              <h2 className="mb-4 text-3xl font-bold leading-tight text-white xl:text-4xl">
-                Redefining Signage{" "}
-                <span className="text-[#0bceb7]">Across India</span>
-              </h2>
-              <p className="text-base leading-relaxed text-white/60">
-                SignEdge Digitech is a leading manufacturer and supplier of
-                premium signage components — trusted by thousands of businesses
-                for quality, reliability, and innovation that stands out in
-                every environment.
-              </p>
-            </div>
+          <PageHero
+            badge="About Us"
+            heading="Redefining Signage"
+            accentText="Across India"
+            description="SignEdge Digitech is a leading manufacturer trusted by thousands of businesses for quality and innovation."
+            accent="#0bceb7"
+            accentMuted="rgba(11, 206, 183, 0.18)"
+            background="linear-gradient(135deg, #c0f2ec 0%, #e6faf8 60%, #c0f2ec 100%)"
+            headingColor="#056358"
+            descriptionColor="#07897a"
+            badgeTextColor="#056358"
+          />
 
-            {/* Right: Illustration */}
-            <div className="z-10 mt-10 md:mt-0">
-              <Image
-                src={accessoryScene}
-                alt="About SignEdge"
-                width={340}
-                height={216}
-                className="drop-shadow-2xl"
-              />
-            </div>
-          </div>
+
           <div className="flex items-center gap-8 lg:gap-32.5">
             <motion.div
               variants={{
@@ -67,17 +51,17 @@ const About = () => {
               className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
             >
               <Image
-                src="/images/about/about-light-01.png"
+                src={aboutImageOne}
                 alt="About SignEdge"
                 className="dark:hidden"
                 fill
               />
-              <Image
+              {/* <Image
                 src="/images/about/about-dark-01.png"
                 alt="About SignEdge"
                 className="hidden dark:block"
                 fill
-              />
+              /> */}
             </motion.div>
 
             <motion.div
@@ -201,17 +185,17 @@ const About = () => {
               className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
             >
               <Image
-                src="./images/about/about-light-02.svg"
+                src={aboutImageTwo}
                 alt="SignEdge Innovation"
                 className="dark:hidden"
                 fill
               />
-              <Image
+              {/* <Image
                 src="./images/about/about-dark-02.svg"
                 alt="SignEdge Innovation"
                 className="hidden dark:block"
                 fill
-              />
+              /> */}
             </motion.div>
           </div>
         </div>

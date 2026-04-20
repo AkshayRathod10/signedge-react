@@ -27,39 +27,26 @@ const Services = () => {
           }
         />
 
-        {/* Hero Banner */}
-        <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d1f25] to-[#1a3a44] px-8 py-8 md:flex-row xl:px-16">
-          {/* Decorative rings */}
-          <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
-          <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
-
-          {/* Left: Text */}
-          <div className="z-10 max-w-lg text-center md:text-left">
-            <span className="mb-4 inline-block rounded-full bg-[#0bceb7]/15 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-[#0bceb7]">
-              Our Services
-            </span>
-            <h2 className="mb-4 text-3xl font-bold leading-tight text-white xl:text-4xl">
-              End-to-End <span className="text-[#0bceb7]">Digital Signage</span>{" "}
-              Solutions
-            </h2>
-            <p className="text-base leading-relaxed text-white/60">
-              From concept to installation, SignEdge delivers complete signage
-              services — tailored to your brand, built for impact, and
-              engineered to last in any environment.
-            </p>
-          </div>
-
-          {/* Right: Illustration */}
-          <div className="z-10 mt-10 md:mt-0">
+        <PageHero
+          badge="Our Services"
+          heading="End-to-End Digital Signage"
+          accentText="Solutions"
+          description="From concept to installation, SignEdge delivers complete signage services tailored to your brand."
+          background="linear-gradient(135deg, var(--color-orange-100) 0%, var(--color-orange-50) 60%, var(--color-orange-100) 100%)"
+          accent="var(--color-orange-500)"
+          accentMuted="rgba(244,81,30,0.18)"
+          headingColor="var(--color-orange-800)"
+          descriptionColor="var(--color-orange-700)"
+          badgeTextColor="var(--color-orange-800)"
+          right={
             <Image
               src={servicesBanner}
-              alt="SignEdge Services"
+              alt="Services"
               width={340}
               height={216}
-              className="drop-shadow-2xl"
             />
-          </div>
-        </div>
+          }
+        />
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">
