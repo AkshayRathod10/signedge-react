@@ -43,7 +43,7 @@ const Products = () => {
           }
         />
 
-        <PageHero
+        {/* <PageHero
           badge="Product Range"
           heading="Built for Signs."
           accentText="Engineered to Perform."
@@ -62,7 +62,7 @@ const Products = () => {
               height={216}
             />
           }
-        />
+        /> */}
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">

@@ -220,7 +220,7 @@ const Contact = () => {
           right={<ContactStats />}
         />
 
-        <PageHero
+        {/* <PageHero
           badge="Contact Us"
           heading="Let's Build Something"
           accentText="Great Together"
@@ -232,79 +232,8 @@ const Contact = () => {
           descriptionColor="#8f1040"
           badgeTextColor="#670b2e"
           right={<ContactStats />}
-        />
-        <section className="py-10">
-          <div className="mx-auto">
-            <div className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d1f25] to-[#1a3a44] px-8 py-8 md:flex-row xl:px-16">
-              {/* Decorative rings */}
-              <div className="pointer-events-none absolute -right-16 -top-16 h-72 w-72 rounded-full border border-[#0bceb7]/20" />
-              <div className="pointer-events-none absolute -right-8 -top-8 h-72 w-72 rounded-full border border-[#0bceb7]/10" />
-
-              {/* Left: Text */}
-              <div className="z-10 max-w-lg text-center md:text-left">
-                <span className="mb-4 inline-block rounded-full bg-[#0bceb7]/15 px-4 py-2 text-sm font-semibold uppercase tracking-widest text-[#0bceb7]">
-                  Contact Us
-                </span>
-                <h2 className="mb-4 text-3xl font-bold leading-tight text-white xl:text-4xl">
-                  Let&apos;s Build Something{" "}
-                  <span className="text-[#0bceb7]">Great Together</span>
-                </h2>
-                <p className="text-base leading-relaxed text-white/60">
-                  Have a project in mind or need expert advice on your signage
-                  requirements? Our team is ready to help — reach out and
-                  we&apos;ll get back to you within 24 hours.
-                </p>
-              </div>
-
-              {/* Right: Quick contact info */}
-              <div className="z-10 mt-10 flex flex-col gap-5 md:mt-0">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0bceb7]/15">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                        fill="#0bceb7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-white/70">
-                    A-432, 2nd Floor, Vashi Plaza,
-                    <br />
-                    Navi Mumbai - 400703
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0bceb7]/15">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                        fill="#0bceb7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-white/70">
-                    info@signedgeindia.com
-                  </p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#0bceb7]/15">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                        fill="#0bceb7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-white/70">
-                    +91 9833035262
-                    <br />
-                    +91 9667667826
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        /> */}
+        
         <div className="relative mx-auto max-w-c-1390 px-7.5 pt-10 lg:px-15 lg:pt-15 xl:px-20 xl:pt-20">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg bg-gradient-to-t from-transparent to-[#dee7ff47] dark:bg-gradient-to-t dark:to-[#252A42]"></div>
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">

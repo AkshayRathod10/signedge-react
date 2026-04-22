@@ -24,7 +24,7 @@ const About = () => {
             accentMuted="rgba(38,166,154,0.12)"
           />
 
-          <PageHero
+          {/* <PageHero
             badge="About Us"
             heading="Redefining Signage"
             accentText="Across India"
@@ -35,7 +35,7 @@ const About = () => {
             headingColor="#056358"
             descriptionColor="#07897a"
             badgeTextColor="#056358"
-          />
+          /> */}
 
 
           <div className="flex items-center gap-8 lg:gap-32.5">

@@ -11,7 +11,9 @@ import FAQ from "@/components/FAQ";
 import Pricing from "@/components/Pricing";
 import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
+import HeroSection from "@/components/HeroSection";
 import Testimonial from "@/components/Testimonial";
+import heroImg from "../assets/images/Image-1.jpg"
 
 export const metadata: Metadata = {
   title: "SignEdge Digitech Pvt Ltd - Home",
@@ -29,7 +31,9 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <HeroSection
+        heroImage={heroImg}
+      />
       {/* <Brands /> */}
       {/* <Feature /> */}
       {/* <About /> */}

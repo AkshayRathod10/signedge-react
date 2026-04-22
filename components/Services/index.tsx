@@ -27,7 +27,7 @@ const Services = () => {
           }
         />
 
-        <PageHero
+        {/* <PageHero
           badge="Our Services"
           heading="End-to-End Digital Signage"
           accentText="Solutions"
@@ -46,7 +46,7 @@ const Services = () => {
               height={216}
             />
           }
-        />
+        /> */}
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">
