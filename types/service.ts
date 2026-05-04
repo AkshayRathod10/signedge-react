@@ -1,9 +1,8 @@
 import { StaticImageData } from "next/image";
 
-export type Product = {
+export type Service = {
   id: number;
   icon: string | StaticImageData;
-  fillIcon: string | StaticImageData;
   title: string;
   description: string;
 };

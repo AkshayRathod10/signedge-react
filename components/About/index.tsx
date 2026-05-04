@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
-import accessoryScene from "../../assets/images/SignEdge-Accessories icon.svg";
 import PageHero from "../Common/PageHero";
 import aboutImageOne from "../../assets/images/Image-2.jpg";
-import aboutImageTwo from "../../assets/images/2nd image.jpg";
+import aboutImageTwo from "../../assets/images/SignEdge-innovation.jpg";
 
 const About = () => {
   return (
@@ -38,18 +36,8 @@ const About = () => {
           /> */}
 
 
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
-            >
+          <div className="flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
+            <div className="relative mx-auto hidden aspect-[588/526.5] w-full md:block md:w-1/2">
               <Image
                 src={aboutImageOne}
                 alt="About SignEdge"
@@ -62,19 +50,9 @@ const About = () => {
                 className="hidden dark:block"
                 fill
               /> */}
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_right md:w-1/2"
-            >
+            <div className="w-full md:w-1/2">
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
                 {"India's"} Trusted Partner in Digital Signage
               </h2>
@@ -119,7 +97,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -128,18 +106,8 @@ const About = () => {
       {/* <!-- ===== About Two Start ===== --> */}
       <section>
         <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
-          <div className="flex items-center gap-8 lg:gap-32.5">
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: -20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_left md:w-1/2"
-            >
+          <div className="flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
+            <div className="w-full md:w-1/2">
               <h2 className="relative mb-6 text-3xl font-bold text-black dark:text-white xl:text-hero">
                 A Decade of Signage{" "}
                 <span className="relative inline-block before:absolute before:bottom-2.5 before:left-0 before:-z-1 before:h-3 before:w-full before:bg-titlebg2 dark:before:bg-titlebgdark">
@@ -171,19 +139,9 @@ const About = () => {
                   </svg>
                 </a>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={{
-                hidden: { opacity: 0, x: 20 },
-                visible: { opacity: 1, x: 0 },
-              }}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 1, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="animate_right relative mx-auto hidden aspect-[588/526.5] md:block md:w-1/2"
-            >
+            <div className="relative mx-auto hidden aspect-[588/526.5] w-full md:block md:w-1/2">
               <Image
                 src={aboutImageTwo}
                 alt="SignEdge Innovation"
@@ -196,7 +154,7 @@ const About = () => {
                 className="hidden dark:block"
                 fill
               /> */}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

@@ -1,11 +1,8 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import productsData from "./productsData";
 import SingleProduct from "./SingleProduct";
-import SectionHeader from "../Common/SectionHeader";
-import accessoryScene from "../../assets/images/SignEdge-Accessories icon.svg";
-import accesoriesIcon from "../../assets/images/SignEdge-Accessories icon (2).svg";
+import productsHeader from "../../assets/images/products-header.svg";
 import PageHero from "../Common/PageHero";
 
 const Products = () => {
@@ -35,7 +32,7 @@ const Products = () => {
           accentMuted="rgba(244,180,0,0.12)"
           right={
             <Image
-              src={accessoryScene}
+              src={productsHeader}
               alt="Products"
               width={340}
               height={216}

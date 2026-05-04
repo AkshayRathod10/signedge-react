@@ -549,7 +549,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
             {[...Array(2)].map((_, pass) =>
               ["LED Modules", "Channel Letters", "Flex Printing", "Digital Displays", "Neon Signs", "Backlit Panels", "Acrylic Signs", "Outdoor Hoardings", "LED Strip Lights", "Sign Accessories"].map((item, i) => (
                 <div className="hero-marquee-item" key={`${pass}-${i}`}>
-                  <span className="hero-marquee-dot" style={{ background: [["#0bceb7","#f4b400","#f4511e","#d81b60"][i % 4]] }} />
+                  <span className="hero-marquee-dot" style={{ background: "#0bceb7" }} />
                   {item}
                 </div>
               ))

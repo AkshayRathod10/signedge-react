@@ -401,7 +401,7 @@ const Contact = () => {
               </form>
             </motion.div>
 
-            {/* <motion.div
+            <motion.div
               variants={{
                 hidden: { opacity: 0, y: -20 },
                 visible: { opacity: 1, y: 0 },
@@ -450,7 +450,7 @@ const Contact = () => {
                   </a>
                 </p>
               </div>
-            </motion.div> */}
+            </motion.div>
           </div>
         </div>
       </section>

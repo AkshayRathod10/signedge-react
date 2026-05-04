@@ -2,9 +2,10 @@ import React from "react";
 import { Product } from "@/types/product";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Service } from "@/types/service";
 
-const SingleProduct = ({ product }: { product: Product }) => {
-  const { icon, title, description } = product;
+const SingleService = ({ service }: { service: Service }) => {
+  const { icon, title, description } = service;
 
   return (
     <>
@@ -26,8 +27,8 @@ const SingleProduct = ({ product }: { product: Product }) => {
         viewport={{ once: true }}
         className="animate_top z-40 rounded-lg border border-white bg-white p-7.5 shadow-solid-3 transition-all hover:shadow-solid-4 dark:border-strokedark dark:bg-blacksection dark:hover:bg-hoverdark xl:p-12.5"
       >
-        <div className="relative flex h-16 w-16 items-center justify-center rounded-[4px] bg-primary">
-          <Image src={icon} width={36} height={36} alt="title" />
+        <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-orange-300/40 bg-gray-50">
+          <Image src={icon} width={55} height={55} alt={title} />
         </div>
         <h3 className="mb-5 mt-7.5 text-xl font-semibold text-black dark:text-white xl:text-itemtitle">
           {title}
@@ -38,4 +39,4 @@ const SingleProduct = ({ product }: { product: Product }) => {
   );
 };
 
-export default SingleProduct;
+export default SingleService;
