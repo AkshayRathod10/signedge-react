@@ -2,7 +2,7 @@
 import Image from "next/image";
 import productsData from "./productsData";
 import SingleProduct from "./SingleProduct";
-import productsHeader from "../../assets/images/products-header.svg";
+import productsHeader from "../../assets/images/products.svg";
 import PageHero from "../Common/PageHero";
 
 const Products = () => {

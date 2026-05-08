@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import servicesData from "./servicesData";
 import SingleService from "./SingleService";
-import servicesBanner from "../../assets/images/SignEdge-Accessories icon.svg";
+import servicesBanner from "../../assets/images/services.svg";
 import PageHero from "../Common/PageHero";
 
 const Services = () => {
