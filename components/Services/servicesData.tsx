@@ -1,10 +1,10 @@
 import { Service } from "@/types/service";
-import contentCreationToolsImage from "@/assets/images/services_content-creation.svg";
+import contentCreationToolsImage from "@/assets/images/services_content-creation-tool.svg";
 import maintenanceSupportImage from "@/assets/images/services_maintenance-support.svg";
 import installationDeploymentImage from "@/assets/images/services_installation-deployment.svg";
 import contentCreationImage from "@/assets/images/services_content-creation.svg";
 import hardwareSolutionsImage from "@/assets/images/services_hardware-solutions.svg";
-import consultationPlanningImage from "@/assets/images/consultation-planning.svg";
+import consultationPlanningImage from "@/assets/images/services_consultation-planning.svg";
 
 const servicesData: Service[] = [
   {
