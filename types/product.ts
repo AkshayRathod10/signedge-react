@@ -2,8 +2,7 @@ import { StaticImageData } from "next/image";
 
 export type Product = {
   id: number;
-  icon: string | StaticImageData;
-  fillIcon: string | StaticImageData;
+  image: string | StaticImageData;
   title: string;
   description: string;
 };
