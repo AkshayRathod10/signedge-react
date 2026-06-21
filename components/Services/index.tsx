@@ -4,8 +4,22 @@ import Image from "next/image";
 import servicesData from "./servicesData";
 import SingleService from "./SingleService";
 import servicesBanner from "../../assets/images/services.svg";
-import consultationPromo from "../../assets/images/2_consultation-planning.svg";
 import PageHero from "../Common/PageHero";
+import imgContentCreationTools from "../../assets/images/4_content-creation-tool.svg";
+import imgMaintenanceSupport from "../../assets/images/7_maintenance-support.svg";
+import imgInstallationDeployment from "../../assets/images/8_installation-deployment.svg";
+import imgContentCreation from "../../assets/images/3_content-creation.svg";
+import imgHardwareSolutions from "../../assets/images/5_hardware-solutions.svg";
+import imgConsultationPlanning from "../../assets/images/2_consultation-planning.svg";
+
+const promoServices = [
+  { image: imgContentCreationTools, title: "Content Creation Tools", description: "Software tools and templates for creating and designing multimedia content, including videos, images, graphics, text, and animations." },
+  { image: imgMaintenanceSupport, title: "Maintenance & Support", description: "Enjoy peace of mind with our proactive maintenance and round-the-clock support services, ensuring your digital signage remains operational." },
+  { image: imgInstallationDeployment, title: "Installation & Deployment", description: "Leave the technicalities to us. Our expert technicians ensure seamless installation and deployment of your digital signage solutions." },
+  { image: imgContentCreation, title: "Content Creation", description: "Our team of creative professionals crafts compelling content that resonates with your audience and reinforces your brand message." },
+  { image: imgHardwareSolutions, title: "Hardware Solutions", description: "From displays and media players to mounts and accessories, we offer high-quality hardware options to suit any environment." },
+  { image: imgConsultationPlanning, title: "Consultation & Planning", description: "We work closely with you to understand your objectives and develop customized digital signage strategies tailored to your specific needs." },
+];
 
 const Services = () => {
   return (
@@ -56,105 +70,83 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Promo Banners Row */}
-        <div className="mt-14 flex flex-col md:flex-row gap-6">
 
-          {/* Promo Banner 1 - Green */}
-          <div className="flex-1 overflow-hidden rounded-2xl bg-[#e8f5eb] flex flex-col md:flex-row items-center justify-between px-10 py-12 gap-8">
-            <div className="max-w-xs">
-              <h2 className="text-2xl font-bold text-gray-800 leading-tight mb-3">
-                Winning with<br />digital signage
-              </h2>
-              <p className="text-gray-600 text-sm">
-                Introducing the SignEdge Consultation Framework
-              </p>
-            </div>
-            <div className="flex-shrink-0 flex items-center justify-center w-70 h-70 rounded-full bg-white p-5 shadow-md">
-              <Image
-                src={consultationPromo}
-                alt="Consultation & Planning"
-                width={200}
-                height={160}
-                className="object-contain"
-              />
-            </div>
+        {/* Green Section — all 6 services */}
+        <div className="mt-14 overflow-hidden rounded-2xl bg-[#e8f5eb]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {promoServices.map((s, i) => (
+              <div
+                key={i}
+                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
+                  ${i % 2 === 0 ? "border-r border-green-200" : ""}
+                  ${i < 4 ? "border-b border-green-200" : ""}
+                `}
+              >
+                <div className="w-full md:w-1/2">
+                  <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{s.description}</p>
+                </div>
+                <div className="w-full md:w-1/2 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
+                    <Image src={s.image} alt={s.title} className="object-contain w-full" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Promo Banner 3 - Orange */}
-          <div className="flex-1 overflow-hidden rounded-2xl bg-[#fef0eb] flex flex-col md:flex-row items-center justify-between px-10 py-12 gap-8">
-            <div className="max-w-xs">
-              <h2 className="text-2xl font-bold text-gray-800 leading-tight mb-3">
-                Plan smarter,<br />deploy faster
-              </h2>
-              <p className="text-[#a6320c] text-sm">
-                Streamline your signage strategy with expert consultation
-              </p>
-            </div>
-            <div className="flex-shrink-0 flex items-center justify-center w-70 h-70 rounded-full bg-white p-5 shadow-md">
-              <Image
-                src={consultationPromo}
-                alt="Consultation & Planning"
-                width={200}
-                height={200}
-                className="object-contain"
-              />
-            </div>
-          </div>
-
         </div>
 
-        {/* Promo Banners Row - Dark */}
-        <div className="mt-6 flex flex-col md:flex-row gap-6">
-
-          {/* Dark Banner Left */}
-          <div className="flex-1 overflow-hidden rounded-2xl bg-[#162040] flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 flex items-center justify-center py-10 px-8">
-              <Image
-                src={consultationPromo}
-                alt="Consultation & Planning"
-                width={260}
-                height={260}
-                className="object-contain w-full h-auto max-h-[260px]"
-              />
-            </div>
-            <div className="w-full md:w-1/2 text-white py-12 px-8">
-              <p className="text-sm leading-relaxed text-gray-200">
-                We know that for businesses like yours, every client and every project counts. And just screening solutions for a single deployment can take several days.{" "}
-                <span className="font-semibold text-white">
-                  What if you could cut that time dramatically?
-                </span>
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-gray-200">
-                Meet SignEdge Consultation Pro, an all-in-one solution that helps manage your signage workflow.
-              </p>
-            </div>
+        {/* Orange Section — all 6 services */}
+        <div className="mt-6 overflow-hidden rounded-2xl bg-[#fdd5c8]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {promoServices.map((s, i) => (
+              <div
+                key={i}
+                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
+                  ${i % 2 === 0 ? "border-r border-orange-200" : ""}
+                  ${i < 4 ? "border-b border-orange-200" : ""}
+                `}
+              >
+                <div className="w-full md:w-1/2">
+                  <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
+                  <p className="text-sm text-[#7a2c0a] leading-relaxed">{s.description}</p>
+                </div>
+                <div className="w-full md:w-1/2 flex items-center justify-center">
+                  <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
+                    <Image src={s.image} alt={s.title} className="object-contain w-full" />
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Dark Banner Right */}
-          <div className="flex-1 overflow-hidden rounded-2xl bg-[#162040] flex flex-col md:flex-row items-center">
-            <div className="w-full md:w-1/2 flex items-center justify-center py-10 px-8">
-              <Image
-                src={consultationPromo}
-                alt="Consultation & Planning"
-                width={260}
-                height={260}
-                className="object-contain w-full h-auto max-h-[260px]"
-              />
-            </div>
-            <div className="w-full md:w-1/2 text-white py-12 px-8">
-              <p className="text-sm leading-relaxed text-gray-200">
-                Our clients report saving an average of 6+ hours per week with streamlined planning and expert consultation built into every step.{" "}
-                <span className="font-semibold text-white">
-                  Deliver the perfect signage experience every time.
-                </span>
-              </p>
-              <p className="mt-4 text-sm leading-relaxed text-gray-200">
-                SignEdge clients report saving an average of 6+ hours per week on deployment workflows.
-              </p>
-            </div>
-          </div>
-
         </div>
+
+        {/* Dark Blue Section — all 6 services */}
+        <div className="mt-6 overflow-hidden rounded-2xl bg-[#162040]">
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {promoServices.map((s, i) => (
+              <div
+                key={i}
+                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
+                  ${i % 2 === 0 ? "border-r border-white/10" : ""}
+                  ${i < 4 ? "border-b border-white/10" : ""}
+                `}
+              >
+                <div className="w-full md:w-1/2 flex items-center justify-center">
+                  
+                  <Image src={s.image} alt={s.title} className="object-contain w-full" />
+                  
+                </div>
+                <div className="w-full md:w-1/2">
+                  <h3 className="text-xl font-bold text-white leading-tight mb-2">{s.title}</h3>
+                  <p className="text-sm text-gray-300 leading-relaxed">{s.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+
       </div>
     </section>
   );
