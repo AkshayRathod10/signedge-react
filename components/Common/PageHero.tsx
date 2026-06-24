@@ -20,7 +20,7 @@ type PageHeroProps = {
     description,
     accent,
     accentMuted,
-    background = "linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%)",
+    background = "var(--gradient-dark)",
     headingColor = "#ffffff",
     descriptionColor = "rgba(255,255,255,0.6)",
     badgeTextColor,

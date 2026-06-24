@@ -127,53 +127,12 @@ const Contact = () => {
 
     if (validateForm()) {
       try {
-        const request = {
-          sender: {
-            name: "Signedge",
-            email: "admin@signedgeindia.com",
-          },
-          to: [
-            {
-              email: "info@signedgeindia.com",
-              name: "Signedge",
-            },
-          ],
-          subject: "Enquiry Received – SignEdge Website",
-          htmlContent: `<!DOCTYPE html>
-          <html>
-          <head>
-              <style>
-                  body { font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px; }
-                  .container { max-width: 600px; margin: 0 auto; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
-                  h2 { color: #333; }
-                  p { font-size: 16px; color: #555; }
-                  .info { margin: 10px 0; }
-                  .footer { margin-top: 20px; font-size: 14px; color: #888; text-align: center; }
-              </style>
-          </head>
-          <body>
-              <div class='container'>
-                  <h2>New Enquiry Received</h2>
-                  <div class='info'><strong>Name:</strong> ${formData.name}</div>
-                  <div class='info'><strong>Email:</strong> ${formData.email}</div>
-                  <div class='info'><strong>Phone:</strong> ${formData.phone}</div>
-                  <div class='info'><strong>Subject:</strong> ${formData.subject}</div>
-                  <div class='info'><strong>Message:</strong></div>
-                  <p>${formData.message}</p>
-                  <div class='footer'>
-                      <p>This is an automated email. Please do not reply.</p>
-                  </div>
-              </div>
-          </body>
-          </html>`,
-        };
-
-        await axios.post("https://api.brevo.com/v3/smtp/email", request, {
-          headers: {
-            "Content-Type": "application/json",
-            accept: "application/json",
-            "api-key": process.env.NEXT_PUBLIC_BREVO_API_KEY,
-          },
+        await axios.post("/contact.php", {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          phone: formData.phone,
+          message: formData.message,
         });
 
         toast.success("Message sent successfully!");
@@ -380,7 +339,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     aria-label="send message"
-                    className="inline-flex items-center gap-2.5 rounded-full bg-black px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-blackho dark:bg-btndark"
+                    className="inline-flex items-center gap-2.5 rounded-full bg-primary px-6 py-3 font-medium text-white duration-300 ease-in-out hover:bg-primaryho"
                   >
                     Send Message
                     <svg

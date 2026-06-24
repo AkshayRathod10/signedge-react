@@ -2,6 +2,8 @@ import image1 from "@/public/images/user/user-01.png";
 import image2 from "@/public/images/user/user-02.png";
 import { Testimonial } from "@/types/testimonial";
 
+// TODO(content): placeholder testimonials — replace name/designation/content/image
+// with real, approved client quotes before relying on this on the live site.
 export const testimonialData: Testimonial[] = [
   {
     id: 1,

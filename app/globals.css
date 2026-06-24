@@ -4,7 +4,7 @@
 
 @theme {
   --font-*: initial;
-  --font-inter: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
 
   --color-current: currentColor;
   --color-transparent: transparent;
@@ -19,8 +19,8 @@
   --color-black: #181c31;
   --color-blackho: #2c3149;
   --color-blacksection: #1c2136;
-  --color-primary: #006bff;
-  --color-primaryho: #0063ec;
+  --color-primary: #0bceb7;
+  --color-primaryho: #09b09c;
   --color-meta: #20c5a8;
   --color-waterloo: #757693;
   --color-manatee: #999aa1;
@@ -130,6 +130,11 @@
   }
 }
 
+:root {
+  /* Shared dark surface for full-bleed sections (hero, footer, services panel) */
+  --gradient-dark: #0d1117;
+}
+
 /*
   The default border color has changed to `currentcolor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -190,7 +195,7 @@
 
 @layer base {
   body {
-    @apply relative z-1 font-inter text-regular font-normal text-waterloo dark:text-manatee;
+    @apply relative z-1 font-sans text-regular font-normal text-waterloo dark:text-manatee;
   }
 }
 

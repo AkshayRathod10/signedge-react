@@ -64,89 +64,94 @@ const Services = () => {
         /> */}
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">
+        {/* <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">
           {servicesData.map((service, key) => (
             <SingleService service={service} key={key} />
           ))}
-        </div>
+        </div> */}
 
 
-        {/* Green Section — all 6 services */}
-        <div className="mt-14 overflow-hidden rounded-2xl bg-[#e8f5eb]">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {promoServices.map((s, i) => (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
-                  ${i % 2 === 0 ? "border-r border-green-200" : ""}
-                  ${i < 4 ? "border-b border-green-200" : ""}
-                `}
-              >
-                <div className="w-full md:w-1/2">
-                  <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{s.description}</p>
-                </div>
-                <div className="w-full md:w-1/2 flex items-center justify-center">
-                  <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
-                    <Image src={s.image} alt={s.title} className="object-contain w-full" />
+        {/* Green + Orange promo variants retired — client approved the Dark Blue layout below.
+            Kept here (disabled) in case we want to revisit. */}
+        {false && (
+          <>
+            {/* Green Section — all 6 services */}
+            <div className="mt-14 overflow-hidden rounded-2xl bg-[#e8f5eb]">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {promoServices.map((s, i) => (
+                  <div
+                    key={i}
+                    className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
+                      ${i % 2 === 0 ? "border-r border-green-200" : ""}
+                      ${i < 4 ? "border-b border-green-200" : ""}
+                    `}
+                  >
+                    <div className="w-full md:w-1/2">
+                      <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{s.description}</p>
+                    </div>
+                    <div className="w-full md:w-1/2 flex items-center justify-center">
+                      <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
+                        <Image src={s.image} alt={s.title} className="object-contain w-full" />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
 
-        {/* Orange Section — all 6 services */}
-        <div className="mt-6 overflow-hidden rounded-2xl bg-[#fdd5c8]">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {promoServices.map((s, i) => (
-              <div
-                key={i}
-                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
-                  ${i % 2 === 0 ? "border-r border-orange-200" : ""}
-                  ${i < 4 ? "border-b border-orange-200" : ""}
-                `}
-              >
-                <div className="w-full md:w-1/2">
-                  <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
-                  <p className="text-sm text-[#7a2c0a] leading-relaxed">{s.description}</p>
-                </div>
-                <div className="w-full md:w-1/2 flex items-center justify-center">
-                  <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
-                    <Image src={s.image} alt={s.title} className="object-contain w-full" />
+            {/* Orange Section — all 6 services */}
+            <div className="mt-6 overflow-hidden rounded-2xl bg-[#fdd5c8]">
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                {promoServices.map((s, i) => (
+                  <div
+                    key={i}
+                    className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
+                      ${i % 2 === 0 ? "border-r border-orange-200" : ""}
+                      ${i < 4 ? "border-b border-orange-200" : ""}
+                    `}
+                  >
+                    <div className="w-full md:w-1/2">
+                      <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
+                      <p className="text-sm text-[#7a2c0a] leading-relaxed">{s.description}</p>
+                    </div>
+                    <div className="w-full md:w-1/2 flex items-center justify-center">
+                      <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
+                        <Image src={s.image} alt={s.title} className="object-contain w-full" />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          </>
+        )}
 
-        {/* Dark Blue Section — all 6 services */}
-        <div className="mt-6 overflow-hidden rounded-2xl bg-[#162040]">
+        {/* Service rows — separate dark section */}
+        <div
+          style={{ background: "var(--gradient-dark)" }}
+          className="mt-16 overflow-hidden rounded-3xl"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2">
             {promoServices.map((s, i) => (
               <div
                 key={i}
-                className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
-                  ${i % 2 === 0 ? "border-r border-white/10" : ""}
-                  ${i < 4 ? "border-b border-white/10" : ""}
+                className={`group flex flex-col items-center justify-between gap-6 px-10 py-10 md:flex-row
+                  ${i % 2 === 0 ? "md:border-r md:border-orange-500/15" : ""}
+                  ${i < promoServices.length - 2 ? "border-b border-orange-500/15" : ""}
                 `}
               >
-                <div className="w-full md:w-1/2 flex items-center justify-center">
-                  
-                  <Image src={s.image} alt={s.title} className="object-contain w-full" />
-                  
+                <div className="flex w-full items-center justify-center md:w-1/2">
+                  <Image src={s.image} alt={s.title} className="w-full object-contain" />
                 </div>
                 <div className="w-full md:w-1/2">
-                  <h3 className="text-xl font-bold text-white leading-tight mb-2">{s.title}</h3>
-                  <p className="text-sm text-gray-300 leading-relaxed">{s.description}</p>
+                  <h3 className="mb-2 text-xl font-bold leading-tight text-white transition-colors duration-300 group-hover:text-orange-500">{s.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-300">{s.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-
       </div>
     </section>
   );

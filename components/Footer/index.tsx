@@ -18,7 +18,7 @@ const fadeUp = {
 const Footer = () => {
   return (
     <footer
-      style={{ background: "linear-gradient(135deg, #0d1117 0%, #1a1f2e 100%)" }}
+      style={{ background: "var(--gradient-dark)" }}
       className="relative border-t border-white/[0.06]"
     >
       {/* Subtle teal top-border accent */}

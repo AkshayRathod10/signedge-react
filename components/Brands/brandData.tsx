@@ -1,5 +1,7 @@
 import { Brand } from "@/types/brand";
 
+// TODO(content): replace these placeholder logos with real SignEdge client logos.
+// Swap the SVGs in /public/images/brand/ and set each `name`/`href` accordingly.
 const brandData: Brand[] = [
   {
     id: 0.25,

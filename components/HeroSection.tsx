@@ -89,7 +89,6 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           justify-content: center;
           overflow: hidden;
           background: #060d0c;
-          font-family: 'DM Sans', sans-serif;
           padding: 0;
         }
 
@@ -124,16 +123,6 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           pointer-events: none;
           z-index: 0;
           animation: glowPulse 8s ease-in-out infinite alternate-reverse;
-        }
-        .hero-glow-magenta {
-          position: absolute;
-          width: 400px; height: 400px;
-          border-radius: 50%;
-          background: radial-gradient(circle, rgba(216,27,96,0.10) 0%, transparent 70%);
-          top: 30%; right: -100px;
-          pointer-events: none;
-          z-index: 0;
-          animation: glowPulse 7s ease-in-out infinite alternate;
         }
         @keyframes glowPulse {
           from { transform: scale(1); opacity: 0.8; }
@@ -450,17 +439,10 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
         }
       `}</style>
 
-      {/* Google Font */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
       <section className="hero-root">
         {/* Ambient glows */}
         <div className="hero-glow-teal" />
         <div className="hero-glow-amber" />
-        <div className="hero-glow-magenta" />
 
         {/* Grid */}
         <div className="hero-grid" />

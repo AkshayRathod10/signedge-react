@@ -9,7 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 const TEAL = "#0bceb7";
 const TEAL_LIGHT = "#e6faf8";
 
-const BlogCarousel = ({ blogs }: { blogs: Blog[] }) => {
+const IndustriesCarousel = ({ blogs }: { blogs: Blog[] }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -205,4 +205,4 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
   );
 };
 
-export default BlogCarousel;
+export default IndustriesCarousel;

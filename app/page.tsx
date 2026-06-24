@@ -35,17 +35,17 @@ export default function Home() {
         heroImage={heroImg}
       />
       {/* <Brands /> */}
+      <Blog />
+      {/* <FunFact />
+      <Testimonial />
+      <CTA /> */}
       {/* <Feature /> */}
       {/* <About /> */}
       {/* <FeaturesTab /> */}
-      {/* <FunFact /> */}
       {/* <Integration /> */}
-      {/* <CTA /> */}
       {/* <FAQ /> */}
-      {/* <Testimonial /> */}
       {/* <Pricing /> */}
       {/* <Contact /> */}
-      <Blog />
     </>
   );
 }

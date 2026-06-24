@@ -2,7 +2,7 @@ import React from "react";
 import SectionHeader from "../Common/SectionHeader";
 import BlogItem from "./BlogItem";
 import BlogData from "./blogData";
-import BlogCarousel from "./IndustriesCarousel";
+import IndustriesCarousel from "./IndustriesCarousel";
 
 const Blog = async () => {
   return (
@@ -12,9 +12,9 @@ const Blog = async () => {
         <div className="animate_top mx-auto text-center">
           <SectionHeader
             headerInfo={{
-              title: `Tailored for your industry`,
-              subtitle: ``,
-              description: ``
+              title: `Industries We Serve`,
+              subtitle: `Tailored for Your Industry`,
+              description: `From retail and hospitality to corporate and transport, SignEdge delivers signage solutions built around the way each industry works.`,
             }}
           />
         </div>
@@ -22,7 +22,7 @@ const Blog = async () => {
       </div>
 
       
-      <BlogCarousel blogs={BlogData} />
+      <IndustriesCarousel blogs={BlogData} />
        
     </section>
   );
