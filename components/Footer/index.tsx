@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="mx-auto px-8">
 
         {/* ── Top ── */}
-        <div className="py-16 lg:py-20">
+        <div className="py-8">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
 
             {/* Brand column */}

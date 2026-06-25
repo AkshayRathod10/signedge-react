@@ -32,7 +32,7 @@ const IndustriesCarousel = ({ blogs }: { blogs: Blog[] }) => {
   }, [emblaApi]);
 
   return (
-    <section className="mx-auto max-w-c-1280 px-4 py-16 md:px-8 xl:px-0 xl:py-20">
+    <section className="mx-auto max-w-c-1280 px-4 py-8">
       {/* Section label */}
       <div className="mb-10 flex items-center gap-3">
         <span

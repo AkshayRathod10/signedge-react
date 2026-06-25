@@ -13,11 +13,11 @@ import imgHardwareSolutions from "../../assets/images/5_hardware-solutions.svg";
 import imgConsultationPlanning from "../../assets/images/2_consultation-planning.svg";
 
 const promoServices = [
-  { image: imgContentCreationTools, title: "Content Creation Tools", description: "Software tools and templates for creating and designing multimedia content, including videos, images, graphics, text, and animations." },
-  { image: imgMaintenanceSupport, title: "Maintenance & Support", description: "Enjoy peace of mind with our proactive maintenance and round-the-clock support services, ensuring your digital signage remains operational." },
+  { image: imgContentCreationTools, title: "Content Creation Tools", description: "Software tools and templates for creating and designing multimedia content, including videos, images, graphics, text, and animations. Content creation tools offer editing, customization, and branding features." },
+  { image: imgMaintenanceSupport, title: "Maintenance & Support", description: "Enjoy peace of mind with our proactive maintenance and round-the-clock support services, ensuring your digital signage remains operational and up-to-date." },
   { image: imgInstallationDeployment, title: "Installation & Deployment", description: "Leave the technicalities to us. Our expert technicians ensure seamless installation and deployment of your digital signage solutions." },
   { image: imgContentCreation, title: "Content Creation", description: "Our team of creative professionals crafts compelling content that resonates with your audience and reinforces your brand message." },
-  { image: imgHardwareSolutions, title: "Hardware Solutions", description: "From displays and media players to mounts and accessories, we offer high-quality hardware options to suit any environment." },
+  { image: imgHardwareSolutions, title: "Hardware Solutions", description: "From displays and media players to mounts and accessories, we offer a wide selection of high-quality hardware options to suit any environment." },
   { image: imgConsultationPlanning, title: "Consultation & Planning", description: "We work closely with you to understand your objectives and develop customized digital signage strategies tailored to your specific needs." },
 ];
 
@@ -76,7 +76,7 @@ const Services = () => {
         {false && (
           <>
             {/* Green Section — all 6 services */}
-            <div className="mt-14 overflow-hidden rounded-2xl bg-[#e8f5eb]">
+            <div className="mt-8 overflow-hidden rounded-2xl bg-[#e8f5eb]">
               <div className="grid grid-cols-1 md:grid-cols-2">
                 {promoServices.map((s, i) => (
                   <div
@@ -128,29 +128,22 @@ const Services = () => {
         )}
 
         {/* Service rows — separate dark section */}
-        <div
-          style={{ background: "var(--gradient-dark)" }}
-          className="mt-16 overflow-hidden rounded-3xl"
-        >
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {promoServices.map((s, i) => (
-              <div
-                key={i}
-                className={`group flex flex-col items-center justify-between gap-6 px-10 py-10 md:flex-row
-                  ${i % 2 === 0 ? "md:border-r md:border-orange-500/15" : ""}
-                  ${i < promoServices.length - 2 ? "border-b border-orange-500/15" : ""}
-                `}
-              >
-                <div className="flex w-full items-center justify-center md:w-1/2">
-                  <Image src={s.image} alt={s.title} className="w-full object-contain" />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h3 className="mb-2 text-xl font-bold leading-tight text-white transition-colors duration-300 group-hover:text-orange-500">{s.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-300">{s.description}</p>
-                </div>
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {promoServices.map((s, i) => (
+            <div
+              key={i}
+              style={{ background: "var(--gradient-dark)" }}
+              className="group flex flex-col items-center justify-between gap-6 overflow-hidden rounded-3xl px-10 py-10 md:flex-row"
+            >
+              <div className="flex w-full items-center justify-center md:w-1/2">
+                <Image src={s.image} alt={s.title} className="w-full object-contain" />
               </div>
-            ))}
-          </div>
+              <div className="w-full md:w-1/2">
+                <h3 className="mb-2 text-xl font-bold leading-tight text-white transition-colors duration-300 group-hover:text-orange-500">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-300">{s.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

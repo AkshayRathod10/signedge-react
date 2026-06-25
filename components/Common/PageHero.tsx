@@ -28,7 +28,7 @@ type PageHeroProps = {
   }: PageHeroProps) => {
     return (
       <div
-        className="relative mb-16 flex flex-col items-center justify-between overflow-hidden rounded-3xl px-8 py-10 md:flex-row xl:px-16"
+        className="relative mb-8 flex flex-col items-center justify-between overflow-hidden rounded-3xl px-8 py-10 md:flex-row xl:px-16"
         style={{ background }}
       >
         {/* Decorative rings */}

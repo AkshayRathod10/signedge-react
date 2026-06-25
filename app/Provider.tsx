@@ -42,7 +42,7 @@ export default function ClientLayout({
             <Header />
             <ToasterContext />
 
-            <main style={{ marginTop: `92px` }}>{children}</main>
+            <main style={{ marginTop: `95px` }}>{children}</main>
 
             <Footer />
             <ScrollToTop />

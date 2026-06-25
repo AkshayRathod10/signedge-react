@@ -10,16 +10,16 @@ type HeroSectionProps = {
 
 // ─── Floating badge data ───────────────────────────────────────────────────────
 const BADGES = [
-  { label: "500+ Clients", color: "#0bceb7", bg: "rgba(11,206,183,0.12)", top: "12%", left: "4%", delay: "0s" },
+  { label: "50+ Clients", color: "#0bceb7", bg: "rgba(11,206,183,0.12)", top: "12%", left: "4%", delay: "0s" },
   { label: "LED Modules", color: "#f4b400", bg: "rgba(244,180,0,0.12)", top: "72%", left: "2%", delay: "0.4s" },
   { label: "10+ Years", color: "#f4511e", bg: "rgba(244,81,30,0.12)", top: "20%", right: "3%", delay: "0.2s" },
   { label: "Pan India", color: "#d81b60", bg: "rgba(216,27,96,0.12)", top: "68%", right: "2%", delay: "0.6s" },
 ];
 
 const STATS = [
-  { value: "500+", label: "Clients Served", color: "#0bceb7" },
+  { value: "50+", label: "Clients Served", color: "#0bceb7" },
   { value: "10+", label: "Years Experience", color: "#f4b400" },
-  { value: "50k+", label: "Units Shipped", color: "#f4511e" },
+  { value: "3k+", label: "Units Shipped", color: "#f4511e" },
   { value: "24hr", label: "Support", color: "#d81b60" },
 ];
 
@@ -529,7 +529,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
         <div className="hero-marquee-wrap">
           <div className="hero-marquee-track">
             {[...Array(2)].map((_, pass) =>
-              ["LED Modules", "Channel Letters", "Flex Printing", "Digital Displays", "Neon Signs", "Backlit Panels", "Acrylic Signs", "Outdoor Hoardings", "LED Strip Lights", "Sign Accessories"].map((item, i) => (
+              ["LED Modules", "Digital Displays", "Backlit Panels", "Outdoor Hoardings", "Sign Accessories"].map((item, i) => (
                 <div className="hero-marquee-item" key={`${pass}-${i}`}>
                   <span className="hero-marquee-dot" style={{ background: "#0bceb7" }} />
                   {item}
