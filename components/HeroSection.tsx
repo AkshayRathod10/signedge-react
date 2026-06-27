@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 type HeroSectionProps = {
@@ -467,18 +468,18 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
             </p>
 
             <div className={`hero-cta-row ${mounted ? "visible" : ""}`}>
-              <button className="hero-btn-primary">
+              <Link href="/products" className="hero-btn-primary">
                 Explore Products
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
-              <button className="hero-btn-ghost">
+              </Link>
+              {/* <button className="hero-btn-ghost">
                 View Our Work
                 <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                   <path d="M8 3v10M3 8h10" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
 

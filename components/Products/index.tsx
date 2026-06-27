@@ -2,12 +2,11 @@
 import Image from "next/image";
 import PageHero from "../Common/PageHero";
 import productsHeader from "../../assets/images/products.svg";
-import imgLedDisplay from "../../assets/images/10_LED.svg";
-import imgMediaPlayer from "../../assets/images/1_media-player.svg";
-import imgCms from "../../assets/images/6_CMS.svg";
-import imgTouchscreen from "../../assets/images/9_interactive-touchscreen.svg";
-import imgMountingHardware from "../../assets/images/11_mounting-hardware.svg";
-import imgAccessories from "../../assets/images/Accessories-01.svg";
+import imgLedDisplay from "../../assets/images/led.svg";
+import imgMediaPlayer from "../../assets/images/media-player.svg";
+import imgCms from "../../assets/images/cms.svg";
+import imgTouchscreen from "../../assets/images/interactive-touchscreen.svg";
+import imgMountingHardware from "../../assets/images/mounting-hardware.svg";
 
 const productItems = [
   {
@@ -40,12 +39,6 @@ const productItems = [
     description:
       "Secure mounting solutions for installing displays in various locations, including wall mounts, ceiling mounts, floor stands, and freestanding kiosks. Mounting hardware ensures proper installation and stability.",
   },
-  // {
-  //   image: imgAccessories,
-  //   title: "Accessories",
-  //   description:
-  //     "Additional accessories such as digital signage enclosures, cables, connectors, power supplies, and mounting brackets to support the deployment and operation of digital signage displays.",
-  // },
 ];
 
 const Products = () => {
@@ -63,14 +56,14 @@ const Products = () => {
             <Image
               src={productsHeader}
               alt="Products"
-              width={340}
+              width={320}
               height={216}
             />
           }
         />
 
         {/* Product rows — separate dark section */}
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {productItems.map((p, i) => (
             <div
               key={i}

@@ -13,7 +13,7 @@ import Contact from "@/components/Contact";
 import Blog from "@/components/Blog";
 import HeroSection from "@/components/HeroSection";
 import Testimonial from "@/components/Testimonial";
-import heroImg from "../assets/images/Image-1.jpg"
+import heroImg from "../assets/images/hero-banner.jpg"
 
 export const metadata: Metadata = {
   title: "SignEdge Digitech Pvt Ltd - Home",

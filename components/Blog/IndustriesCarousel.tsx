@@ -133,7 +133,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
       whileInView="visible"
       transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="grid grid-cols-1 overflow-hidden rounded-2xl border border-gray-100 bg-white lg:grid-cols-2"
+      className="grid grid-cols-1 overflow-hidden rounded-2xl border border-strokedark bg-white lg:grid-cols-2"
       style={{ minHeight: "340px" }}
     >
       {/* Left: Content */}

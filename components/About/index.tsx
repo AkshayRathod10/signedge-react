@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import PageHero from "../Common/PageHero";
-import aboutImageOne from "../../assets/images/Image-2.jpg";
-import aboutImageTwo from "../../assets/images/SignEdge-innovation.jpg";
+import aboutImageOne from "../../assets/images/about-partner.jpg";
+import aboutImageTwo from "../../assets/images/about-innovation.jpg";
 
 const About = () => {
   return (
@@ -22,21 +22,7 @@ const About = () => {
             accentMuted="rgba(38,166,154,0.12)"
           />
 
-          {/* <PageHero
-            badge="About Us"
-            heading="Redefining Signage"
-            accentText="Across India"
-            description="SignEdge Digitech is a leading manufacturer trusted by thousands of businesses for quality and innovation."
-            accent="#0bceb7"
-            accentMuted="rgba(11, 206, 183, 0.18)"
-            background="linear-gradient(135deg, #c0f2ec 0%, #e6faf8 60%, #c0f2ec 100%)"
-            headingColor="#056358"
-            descriptionColor="#07897a"
-            badgeTextColor="#056358"
-          /> */}
-
-
-          <div className="flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
+          <div className="mt-6 flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
             <div className="relative mx-auto hidden aspect-[588/526.5] w-full md:block md:w-1/2">
               <Image
                 src={aboutImageOne}
@@ -104,7 +90,7 @@ const About = () => {
       {/* <!-- ===== About End ===== --> */}
 
       {/* <!-- ===== About Two Start ===== --> */}
-      <section>
+      <section className="pb-10">
         <div className="mx-auto max-w-c-1235 overflow-hidden px-4 md:px-8 2xl:px-0">
           <div className="flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
             <div className="w-full md:w-1/2">

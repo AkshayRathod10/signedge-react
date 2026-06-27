@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import bannerImg from "../../assets/images/Image-1.jpg"
+import bannerImg from "../../assets/images/hero-banner.jpg"
 
 const Hero = () => {
   const [email, setEmail] = useState("");

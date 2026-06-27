@@ -1,16 +1,12 @@
-"use client";
-import React from "react";
 import Image from "next/image";
-import servicesData from "./servicesData";
-import SingleService from "./SingleService";
 import servicesBanner from "../../assets/images/services.svg";
 import PageHero from "../Common/PageHero";
-import imgContentCreationTools from "../../assets/images/4_content-creation-tool.svg";
-import imgMaintenanceSupport from "../../assets/images/7_maintenance-support.svg";
-import imgInstallationDeployment from "../../assets/images/8_installation-deployment.svg";
-import imgContentCreation from "../../assets/images/3_content-creation.svg";
-import imgHardwareSolutions from "../../assets/images/5_hardware-solutions.svg";
-import imgConsultationPlanning from "../../assets/images/2_consultation-planning.svg";
+import imgContentCreationTools from "../../assets/images/content-creation-tool.svg";
+import imgMaintenanceSupport from "../../assets/images/maintenance-support.svg";
+import imgInstallationDeployment from "../../assets/images/installation-deployment.svg";
+import imgContentCreation from "../../assets/images/content-creation.svg";
+import imgHardwareSolutions from "../../assets/images/hardware-solutions.svg";
+import imgConsultationPlanning from "../../assets/images/consultation-planning.svg";
 
 const promoServices = [
   { image: imgContentCreationTools, title: "Content Creation Tools", description: "Software tools and templates for creating and designing multimedia content, including videos, images, graphics, text, and animations. Content creation tools offer editing, customization, and branding features." },
@@ -36,99 +32,15 @@ const Services = () => {
             <Image
               src={servicesBanner}
               alt="Services"
-              width={340}
+              width={320}
               height={216}
             />
           }
         />
 
-        {/* <PageHero
-          badge="Our Services"
-          heading="End-to-End Digital Signage"
-          accentText="Solutions"
-          description="From concept to installation, SignEdge delivers complete signage services tailored to your brand."
-          background="linear-gradient(135deg, var(--color-orange-100) 0%, var(--color-orange-50) 60%, var(--color-orange-100) 100%)"
-          accent="var(--color-orange-500)"
-          accentMuted="rgba(244,81,30,0.18)"
-          headingColor="var(--color-orange-800)"
-          descriptionColor="var(--color-orange-700)"
-          badgeTextColor="var(--color-orange-800)"
-          right={
-            <Image
-              src={servicesBanner}
-              alt="Services"
-              width={340}
-              height={216}
-            />
-          }
-        /> */}
-
-        {/* Services Grid */}
-        {/* <div className="grid grid-cols-1 gap-7.5 md:grid-cols-2 lg:grid-cols-3 xl:gap-12.5">
-          {servicesData.map((service, key) => (
-            <SingleService service={service} key={key} />
-          ))}
-        </div> */}
-
-
-        {/* Green + Orange promo variants retired — client approved the Dark Blue layout below.
-            Kept here (disabled) in case we want to revisit. */}
-        {false && (
-          <>
-            {/* Green Section — all 6 services */}
-            <div className="mt-8 overflow-hidden rounded-2xl bg-[#e8f5eb]">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                {promoServices.map((s, i) => (
-                  <div
-                    key={i}
-                    className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
-                      ${i % 2 === 0 ? "border-r border-green-200" : ""}
-                      ${i < 4 ? "border-b border-green-200" : ""}
-                    `}
-                  >
-                    <div className="w-full md:w-1/2">
-                      <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">{s.description}</p>
-                    </div>
-                    <div className="w-full md:w-1/2 flex items-center justify-center">
-                      <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
-                        <Image src={s.image} alt={s.title} className="object-contain w-full" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Orange Section — all 6 services */}
-            <div className="mt-6 overflow-hidden rounded-2xl bg-[#fdd5c8]">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                {promoServices.map((s, i) => (
-                  <div
-                    key={i}
-                    className={`flex flex-col md:flex-row items-center justify-between gap-6 px-10 py-10
-                      ${i % 2 === 0 ? "border-r border-orange-200" : ""}
-                      ${i < 4 ? "border-b border-orange-200" : ""}
-                    `}
-                  >
-                    <div className="w-full md:w-1/2">
-                      <h3 className="text-xl font-bold text-gray-800 leading-tight mb-2">{s.title}</h3>
-                      <p className="text-sm text-[#7a2c0a] leading-relaxed">{s.description}</p>
-                    </div>
-                    <div className="w-full md:w-1/2 flex items-center justify-center">
-                      <div className="flex items-center justify-center w-50 h-50 rounded-full bg-white shadow-md p-4">
-                        <Image src={s.image} alt={s.title} className="object-contain w-full" />
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </>
-        )}
 
         {/* Service rows — separate dark section */}
-        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {promoServices.map((s, i) => (
             <div
               key={i}

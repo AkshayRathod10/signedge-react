@@ -154,7 +154,7 @@ const Contact = () => {
           right={<ContactStats />}
         />
 
-        <div className="relative mx-auto max-w-c-1390 px-6 pt-10 lg:pt-15 xl:pt-20">
+        <div className="relative mx-auto mt-6 max-w-c-1390 px-6">
           <div className="absolute left-0 top-0 -z-1 h-2/3 w-full rounded-lg"></div>
           <div className="absolute bottom-[-255px] left-0 -z-1 h-full w-full">
             <Image
