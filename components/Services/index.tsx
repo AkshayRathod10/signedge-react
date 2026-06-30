@@ -19,9 +19,8 @@ const promoServices = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-10">
-      <div className="mx-auto px-8">
-        <PageHero
+    <section id="services" className="pb-10">
+      <PageHero
           badge="Our Services"
           heading="End-to-End Digital Signage"
           accentText="Solutions"
@@ -37,6 +36,8 @@ const Services = () => {
             />
           }
         />
+      <div className="mx-auto px-8">
+
 
 
         {/* Service rows — separate dark section */}

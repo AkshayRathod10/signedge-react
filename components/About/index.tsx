@@ -9,19 +9,17 @@ const About = () => {
   return (
     <>
       {/* <!-- ===== About Start ===== --> */}
-      <section className="overflow-hidden py-10">
+      <section className="overflow-hidden pb-10">
         {/* About Hero Banner */}
-
+        <PageHero
+          badge="About Us"
+          heading="Redefining Signage"
+          accentText="Across India"
+          description="SignEdge Digitech is a leading manufacturer trusted by thousands of businesses for quality and innovation."
+          accent="#26A69A"
+          accentMuted="rgba(38,166,154,0.12)"
+        />
         <div className="mx-auto px-8">
-          <PageHero
-            badge="About Us"
-            heading="Redefining Signage"
-            accentText="Across India"
-            description="SignEdge Digitech is a leading manufacturer trusted by thousands of businesses for quality and innovation."
-            accent="#26A69A"
-            accentMuted="rgba(38,166,154,0.12)"
-          />
-
           <div className="mt-6 flex flex-col items-center gap-8 md:flex-row lg:gap-32.5">
             <div className="relative mx-auto hidden aspect-[588/526.5] w-full md:block md:w-1/2">
               <Image

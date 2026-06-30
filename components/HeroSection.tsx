@@ -431,7 +431,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           font-weight: 500;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: rgba(200,240,235,0.3);
+          color: rgba(200,240,235,0.7);
           white-space: nowrap;
         }
         .hero-marquee-dot {

@@ -43,9 +43,8 @@ const productItems = [
 
 const Products = () => {
   return (
-    <section id="features" className="py-10">
-      <div className="mx-auto px-8">
-        <PageHero
+    <section id="features" className="pb-10">
+      <PageHero
           badge="Product Range"
           heading="Built for Signs."
           accentText="Engineered to Perform."
@@ -61,6 +60,8 @@ const Products = () => {
             />
           }
         />
+      <div className="mx-auto px-8">
+        
 
         {/* Product rows — separate dark section */}
         <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
