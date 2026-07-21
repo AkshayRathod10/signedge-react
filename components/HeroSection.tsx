@@ -57,14 +57,8 @@ function StatCell({ value, label, color, started }: { value: string; label: stri
 
 // ─── Main component ───────────────────────────────────────────────────────────
 export default function HeroSection({ heroImage }: HeroSectionProps) {
-  const [mounted, setMounted] = useState(false);
   const [statsStarted, setStatsStarted] = useState(false);
   const statsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 60);
-    return () => clearTimeout(t);
-  }, []);
 
   useEffect(() => {
     const el = statsRef.current;
@@ -160,6 +154,21 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           .hero-inner { grid-template-columns: 1fr; padding: 100px 24px 60px; }
         }
 
+        /* ── Entry animations (CSS-only, run at parse time — not gated on JS) ── */
+        @keyframes heroFadeUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes heroFadeRight {
+          from { opacity: 0; transform: translateX(32px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-eyebrow, .hero-heading, .hero-desc, .hero-cta-row, .hero-right {
+            animation: none !important;
+          }
+        }
+
         /* ── Left column ── */
         .hero-left { display: flex; flex-direction: column; gap: 0; }
 
@@ -174,11 +183,8 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           padding: 6px 16px 6px 8px;
           margin-bottom: 28px;
           width: fit-content;
-          opacity: 0;
-          transform: translateY(16px);
-          transition: opacity 0.6s ease, transform 0.6s ease;
+          animation: heroFadeUp 0.6s ease both;
         }
-        .hero-eyebrow.visible { opacity: 1; transform: translateY(0); }
         .hero-eyebrow-dot {
           width: 8px; height: 8px; border-radius: 50%;
           background: #0bceb7;
@@ -204,11 +210,8 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           letter-spacing: -0.02em;
           color: #f0faf9;
           margin: 0 0 20px;
-          opacity: 0;
-          transform: translateY(24px);
-          transition: opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s;
+          animation: heroFadeUp 0.6s ease both;
         }
-        .hero-heading.visible { opacity: 1; transform: translateY(0); }
 
         .hero-heading-line2 {
           display: block;
@@ -225,11 +228,8 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           color: rgba(200,240,235,0.55);
           max-width: 480px;
           margin: 0 0 36px;
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.7s ease 0.28s, transform 0.7s ease 0.28s;
+          animation: heroFadeUp 0.7s ease 0.2s both;
         }
-        .hero-desc.visible { opacity: 1; transform: translateY(0); }
 
         /* CTA row */
         .hero-cta-row {
@@ -237,11 +237,8 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           align-items: center;
           gap: 16px;
           flex-wrap: wrap;
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.7s ease 0.4s, transform 0.7s ease 0.4s;
+          animation: heroFadeUp 0.7s ease 0.3s both;
         }
-        .hero-cta-row.visible { opacity: 1; transform: translateY(0); }
 
         .hero-btn-primary {
           display: inline-flex;
@@ -292,11 +289,8 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           display: flex;
           align-items: center;
           justify-content: center;
-          opacity: 0;
-          transform: translateX(32px);
-          transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+          animation: heroFadeRight 0.7s ease both;
         }
-        .hero-right.visible { opacity: 1; transform: translateX(0); }
 
         .hero-img-frame {
           position: relative;
@@ -452,22 +446,22 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
         <div className="hero-inner">
           {/* ── Left ── */}
           <div className="hero-left">
-            <div className={`hero-eyebrow ${mounted ? "visible" : ""}`}>
+            <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
               <span className="hero-eyebrow-text">India's Leading Signage Manufacturer</span>
             </div>
 
-            <h1 className={`hero-heading ${mounted ? "visible" : ""}`}>
+            <h1 className="hero-heading">
               Illuminate Your
               <span className="hero-heading-line2">Brand Identity.</span>
             </h1>
 
-            <p className={`hero-desc ${mounted ? "visible" : ""}`}>
+            <p className="hero-desc">
               SignEdge Digitech crafts precision LED modules, digital displays, and signage
               accessories trusted by 500+ businesses across India — built to perform, designed to impress.
             </p>
 
-            <div className={`hero-cta-row ${mounted ? "visible" : ""}`}>
+            <div className="hero-cta-row">
               <Link href="/products" className="hero-btn-primary">
                 Explore Products
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -484,7 +478,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           </div>
 
           {/* ── Right ── */}
-          <div className={`hero-right ${mounted ? "visible" : ""}`}>
+          <div className="hero-right">
             <div className="hero-img-frame">
               <Image src={heroImage} alt="SignEdge digital signage display" width={580} height={400} style={{ objectFit: "cover" }} priority />
               <div className="hero-img-overlay" />

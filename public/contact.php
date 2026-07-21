@@ -1,6 +1,14 @@
 <?php
 header("Content-Type: application/json");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require __DIR__ . "/PHPMailer/Exception.php";
+require __DIR__ . "/PHPMailer/PHPMailer.php";
+require __DIR__ . "/PHPMailer/SMTP.php";
+
 // Only allow POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
@@ -8,17 +16,25 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     exit;
 }
 
-// Load API key from .env one directory above the web root
-$apiKey = null;
+// Load config from .env one directory above the web root
+$env = [];
 $envPath = __DIR__ . "/../.env";
 if (is_readable($envPath)) {
-    $env = parse_ini_file($envPath);
-    if ($env !== false && !empty($env["BREVO_API_KEY"])) {
-        $apiKey = $env["BREVO_API_KEY"];
+    $parsed = parse_ini_file($envPath);
+    if ($parsed !== false) {
+        $env = $parsed;
     }
 }
 
-if (empty($apiKey)) {
+$smtpHost = $env["SMTP_HOST"]     ?? "smtp.gmail.com";
+$smtpPort = (int) ($env["SMTP_PORT"] ?? 587);
+$smtpUser = $env["SMTP_USERNAME"] ?? "";
+$smtpPass = $env["SMTP_PASSWORD"] ?? ""; // Gmail App Password
+$fromMail = $env["SMTP_FROM_EMAIL"] ?? $smtpUser;
+$fromName = $env["SMTP_FROM_NAME"]  ?? "SignEdge";
+$toMail   = $env["SMTP_TO_EMAIL"]   ?? "info@signedgeindia.com";
+
+if (empty($smtpUser) || empty($smtpPass)) {
     http_response_code(500);
     echo json_encode(["success" => false, "error" => "Server is not configured"]);
     exit;
@@ -34,12 +50,10 @@ if (!is_array($input)) {
 
 $name    = trim($input["name"] ?? "");
 $email   = trim($input["email"] ?? "");
-$subject = trim($input["subject"] ?? "");
-$phone   = trim($input["phone"] ?? "");
 $message = trim($input["message"] ?? "");
 
-// Validate
-if ($name === "" || $subject === "" || $phone === "" || $message === "") {
+// Validate — only the fields the form actually sends
+if ($name === "" || $message === "") {
     http_response_code(400);
     echo json_encode(["success" => false, "error" => "All fields are required"]);
     exit;
@@ -70,8 +84,6 @@ $htmlContent = "<!DOCTYPE html>
         <h2>New Enquiry Received</h2>
         <div class='info'><strong>Name:</strong> " . $e($name) . "</div>
         <div class='info'><strong>Email:</strong> " . $e($email) . "</div>
-        <div class='info'><strong>Phone:</strong> " . $e($phone) . "</div>
-        <div class='info'><strong>Subject:</strong> " . $e($subject) . "</div>
         <div class='info'><strong>Message:</strong></div>
         <p>" . nl2br($e($message)) . "</p>
         <div class='footer'>
@@ -81,33 +93,33 @@ $htmlContent = "<!DOCTYPE html>
 </body>
 </html>";
 
-$payload = [
-    "sender"      => ["name" => "Signedge", "email" => "admin@signedgeindia.com"],
-    "to"          => [["email" => "info@signedgeindia.com", "name" => "Signedge"]],
-    "replyTo"     => ["email" => $email, "name" => $name],
-    "subject"     => "Enquiry Received \xe2\x80\x93 SignEdge Website",
-    "htmlContent" => $htmlContent,
-];
+$mail = new PHPMailer(true);
+try {
+    $mail->isSMTP();
+    $mail->Host       = $smtpHost;
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $smtpUser;
+    $mail->Password   = $smtpPass;
+    $mail->Port       = $smtpPort;
+    $mail->CharSet    = "UTF-8";
+    if ($smtpPort === 465) {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    } else {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    }
 
-// Send via Brevo
-$ch = curl_init("https://api.brevo.com/v3/smtp/email");
-curl_setopt_array($ch, [
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => json_encode($payload),
-    CURLOPT_HTTPHEADER     => [
-        "Content-Type: application/json",
-        "Accept: application/json",
-        "api-key: " . $apiKey,
-    ],
-]);
+    $mail->setFrom($fromMail, $fromName);
+    $mail->addAddress($toMail, "SignEdge");
+    $mail->addReplyTo($email, $name);
 
-$response = curl_exec($ch);
-$status   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-$curlErr  = curl_error($ch);
-curl_close($ch);
+    $mail->isHTML(true);
+    $mail->Subject = "Enquiry Received \xe2\x80\x93 SignEdge Website";
+    $mail->Body    = $htmlContent;
+    $mail->AltBody = "Name: $name\nEmail: $email\n\n$message";
 
-if ($curlErr || $status < 200 || $status >= 300) {
+    $mail->send();
+} catch (Exception $ex) {
+    error_log("Contact form mail error: " . $mail->ErrorInfo);
     http_response_code(502);
     echo json_encode(["success" => false, "error" => "Failed to send message"]);
     exit;
