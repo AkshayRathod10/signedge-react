@@ -1,17 +1,37 @@
 "use client";
 import SectionHeader from "../Common/SectionHeader";
 
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { useCallback, useEffect, useState } from "react";
 
-import { motion } from "framer-motion";
+import { motion } from "@/components/Common/motion";
 import SingleTestimonial from "./SingleTestimonial";
 import { testimonialData } from "./testimonialData";
 
 const Testimonial = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" }, [
+    Autoplay({ delay: 2500, stopOnInteraction: false }),
+  ]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [snaps, setSnaps] = useState<number[]>([]);
+
+  const scrollTo = useCallback(
+    (i: number) => emblaApi?.scrollTo(i),
+    [emblaApi],
+  );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+    setSnaps(emblaApi.scrollSnapList());
+    emblaApi.on("select", onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi]);
+
   return (
     <>
       <section>
@@ -48,36 +68,35 @@ const Testimonial = () => {
           className="animate_top mx-auto mt-15 max-w-c-1235 px-4 md:px-8 xl:mt-20 xl:px-0"
         >
           {/* <!-- Slider main container --> */}
-          <div className="swiper testimonial-01 mb-20 pb-22.5">
-            {/* <!-- Additional required wrapper --> */}
-            <Swiper
-              spaceBetween={50}
-              slidesPerView={2}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay, Pagination]}
-              breakpoints={{
-                // when window width is >= 640px
-                0: {
-                  slidesPerView: 1,
-                },
-                // when window width is >= 768px
-                768: {
-                  slidesPerView: 2,
-                },
-              }}
-            >
-              {testimonialData.map((review) => (
-                <SwiperSlide key={review?.id}>
-                  <SingleTestimonial review={review} />
-                </SwiperSlide>
+          <div className="mb-20 pb-10">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="-ml-[50px] flex">
+                {testimonialData.map((review) => (
+                  <div
+                    key={review?.id}
+                    className="flex-none basis-full pl-[50px] md:basis-1/2"
+                  >
+                    <SingleTestimonial review={review} />
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Dots */}
+            <div className="mt-10 flex items-center justify-center gap-2">
+              {snaps.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollTo(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className="h-2 rounded-full bg-stroke transition-all duration-300 dark:bg-strokedark"
+                  style={{
+                    width: i === selectedIndex ? "24px" : "8px",
+                    backgroundColor: i === selectedIndex ? "#0bceb7" : undefined,
+                  }}
+                />
               ))}
-            </Swiper>
+            </div>
           </div>
         </motion.div>
       </section>

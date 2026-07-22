@@ -83,6 +83,8 @@ const Hero = () => {
                     src={bannerImg}
                     alt="Hero"
                     fill
+                    priority
+                    sizes="(max-width: 768px) 0px, 50vw"
                   />
                   <Image
                     className="hidden shadow-solid-l dark:block"

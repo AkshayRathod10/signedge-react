@@ -1,10 +1,9 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "@/components/Common/motion";
 import Image from "next/image";
 import React, { useState } from "react";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import toast, { Toaster } from "react-hot-toast";
 import PageHero from "../Common/PageHero";
 
 const ContactStats = () => (
@@ -378,7 +377,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <ToastContainer position="top-right" autoClose={3000} />
+      <Toaster position="top-center" reverseOrder={false} />
     </>
   );
 };

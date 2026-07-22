@@ -3,7 +3,7 @@ import { Blog } from "@/types/blog";
 const BlogData: Blog[] = [
   {
     _id: 1,
-    mainImage: "/images/advertising.jpg",
+    mainImage: "/images/advertising.webp",
     title: "Advertising and Promotions",
     metadata: "Billboards: Display advertisements for products and services.",
     tagColor: { bg: "#EEEDFE", text: "#3C3489", dot: "#7F77DD" },
@@ -15,7 +15,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 2,
-    mainImage: "/images/entertainment-sports.jpg",
+    mainImage: "/images/entertainment-sports.webp",
     title: "Entertainment & Sports",
     metadata: "Scoreboards: Display real-time game scores and stats.",
     tagColor: { bg: "#E1F5EE", text: "#085041", dot: "#1D9E75" },
@@ -27,7 +27,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 3,
-    mainImage: "/images/bfsi.jpg",
+    mainImage: "/images/bfsi.webp",
     title: "BFSI",
     metadata: "Information Displays: Share financial news and updates.",
     tagColor: { bg: "#E6F1FB", text: "#0C447C", dot: "#378ADD" },
@@ -39,7 +39,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 4,
-    mainImage: "/images/restaurant.jpg",
+    mainImage: "/images/restaurant.webp",
     title: "Restaurant",
     metadata: "Digital Menu Boards: Display dynamic menus and promotions.",
     tagColor: { bg: "#FAECE7", text: "#4A1B0C", dot: "#D85A30" },
@@ -51,7 +51,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 5,
-    mainImage: "/images/healthcare.jpg",
+    mainImage: "/images/healthcare.webp",
     title: "Health",
     metadata: "Arrival/Departure Boards: Display real-time schedule information.",
     tagColor: { bg: "#FCEBEB", text: "#791F1F", dot: "#E24B4A" },
@@ -63,7 +63,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 6,
-    mainImage: "/images/education.jpg",
+    mainImage: "/images/education.webp",
     title: "Education",
     metadata: "Digital Announcements: Share important school news and updates.",
     tagColor: { bg: "#FAEEDA", text: "#633806", dot: "#BA7517" },
@@ -75,7 +75,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 7,
-    mainImage: "/images/corporate.jpg",
+    mainImage: "/images/corporate.webp",
     title: "Corporate",
     metadata: "Digital Noticeboards: Display company announcements and updates.",
     tagColor: { bg: "#F1EFE8", text: "#2C2C2A", dot: "#888780" },
@@ -87,7 +87,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 8,
-    mainImage: "/images/led.jpg",
+    mainImage: "/images/led.webp",
     title: "Retail",
     metadata: "Promotional Displays: Highlight special offers and new products.",
     tagColor: { bg: "#FBEAF0", text: "#4B1528", dot: "#D4537E" },
@@ -99,7 +99,7 @@ const BlogData: Blog[] = [
   },
   {
     _id: 9,
-    mainImage: "/images/hospitality.jpg",
+    mainImage: "/images/hospitality.webp",
     title: "Hospitality",
     metadata: "Digital Concierge: Offer information about hotel amenities and local attractions.",
     tagColor: { bg: "#EAF3DE", text: "#173404", dot: "#639922" },

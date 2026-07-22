@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Common/Reveal";
 import Image from "next/image";
 import logoWhite from "../../assets/images/signage-white-logo.svg";
 
@@ -9,11 +9,6 @@ const footerLinks = [
   { label: "Services", href: "/services" },
   { label: "About Us", href: "/about-us" },
 ];
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
 
 const socials = [
   {
@@ -52,14 +47,7 @@ const Footer = () => {
         <div className="py-6">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-0">
             {/* Brand column */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="lg:pr-12"
-            >
+            <Reveal as="div" duration={0.7} delay={0.1} className="lg:pr-12">
               <a href="/" className="mb-6 inline-block">
                 <Image
                   width={110}
@@ -88,17 +76,10 @@ const Footer = () => {
               >
                 info@signedgeindia.com
               </a>
-            </motion.div>
+            </Reveal>
 
             {/* Quick links */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="lg:pl-8"
-            >
+            <Reveal as="div" duration={0.7} delay={0.2} className="lg:pl-8">
               <p
                 className="mb-6 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
@@ -121,17 +102,10 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </Reveal>
 
             {/* CTA / tagline column */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="lg:pl-8"
-            >
+            <Reveal as="div" duration={0.7} delay={0.3} className="lg:pl-8">
               <p
                 className="mb-6 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
@@ -149,30 +123,26 @@ const Footer = () => {
                 Explore Products
                 <span className="text-[#0bceb7]">→</span>
               </a>
-            </motion.div>
+            </Reveal>
           </div>
         </div>
 
         {/* ── Bottom bar ── */}
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] py-2 md:flex-row">
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.7, delay: 0.1 }}
-            viewport={{ once: true }}
+          <Reveal
+            as="p"
+            duration={0.7}
+            delay={0.1}
             className="text-xs text-white/30"
           >
             © {new Date().getFullYear()} SignEdge Digitech. All rights
             reserved.
-          </motion.p>
+          </Reveal>
 
-          <motion.ul
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            transition={{ duration: 0.7, delay: 0.2 }}
-            viewport={{ once: true }}
+          <Reveal
+            as="ul"
+            duration={0.7}
+            delay={0.2}
             className="flex items-center gap-4"
           >
             {socials.map((social) => (
@@ -193,7 +163,7 @@ const Footer = () => {
                 </a>
               </li>
             ))}
-          </motion.ul>
+          </Reveal>
         </div>
       </div>
     </footer>

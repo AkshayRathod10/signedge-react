@@ -1,6 +1,6 @@
 "use client";
 import { Blog } from "@/types/blog";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Common/Reveal";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,22 +9,11 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
 
   return (
     <>
-      <motion.div
-        variants={{
-          hidden: {
-            opacity: 0,
-            y: -20,
-          },
-
-          visible: {
-            opacity: 1,
-            y: 0,
-          },
-        }}
-        initial="hidden"
-        whileInView="visible"
-        transition={{ duration: 1, delay: 0.5 }}
-        viewport={{ once: true }}
+      <Reveal
+        as="div"
+        y={-20}
+        duration={1}
+        delay={0.5}
         className="animate_top rounded-lg bg-white p-4 pb-9 shadow-solid-8 dark:bg-blacksection"
       >
         <Link href={`/blog/`} className="relative block aspect-368/239">
@@ -39,7 +28,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
           </h3>
           <p className="line-clamp-3">{metadata}</p>
         </div>
-      </motion.div>
+      </Reveal>
     </>
   );
 };

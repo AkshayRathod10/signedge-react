@@ -2,7 +2,7 @@
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Blog } from "@/types/blog";
-import { motion } from "framer-motion";
+import Reveal from "@/components/Common/Reveal";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 
@@ -124,15 +124,10 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
   const tagText = tagColor?.text ?? "#056358";
 
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 16 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      viewport={{ once: true }}
+    <Reveal
+      as="div"
+      y={16}
+      duration={0.5}
       className="grid grid-cols-1 overflow-hidden rounded-2xl border border-strokedark bg-white lg:grid-cols-2"
       style={{ minHeight: "340px" }}
     >
@@ -201,7 +196,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
           className="object-cover transition-transform duration-500 hover:scale-[1.03]"
         />
       </div>
-    </motion.div>
+    </Reveal>
   );
 };
 

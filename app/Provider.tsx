@@ -5,7 +5,6 @@ import Header from "@/components/Header";
 import Lines from "@/components/Lines";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
-import ToasterContext from "./context/ToastContext";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 export default function ClientLayout({
@@ -40,7 +39,6 @@ export default function ClientLayout({
         <ThemeProvider enableSystem={false} attribute="class" defaultTheme="light">
             <Lines />
             <Header />
-            <ToasterContext />
 
             <main style={{ marginTop: `95px` }}>{children}</main>
 

@@ -7,58 +7,25 @@ import favIcon from "../assets/images/favicon.svg";
 const satoshi = localFont({
   src: [
     {
-      path: "../assets/fonts/satoshi/Satoshi-Light.otf",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-LightItalic.otf",
-      weight: "300",
-      style: "italic",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-Regular.otf",
+      path: "../assets/fonts/satoshi/woff2/Satoshi-Regular.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "../assets/fonts/satoshi/Satoshi-Italic.otf",
-      weight: "400",
-      style: "italic",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-Medium.otf",
+      path: "../assets/fonts/satoshi/woff2/Satoshi-Medium.woff2",
       weight: "500",
       style: "normal",
     },
     {
-      path: "../assets/fonts/satoshi/Satoshi-MediumItalic.otf",
-      weight: "500",
-      style: "italic",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-Bold.otf",
+      path: "../assets/fonts/satoshi/woff2/Satoshi-Bold.woff2",
       weight: "700",
       style: "normal",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-BoldItalic.otf",
-      weight: "700",
-      style: "italic",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-Black.otf",
-      weight: "900",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/satoshi/Satoshi-BlackItalic.otf",
-      weight: "900",
-      style: "italic",
     },
   ],
   variable: "--font-satoshi",
   display: "swap",
+  fallback: ["system-ui", "arial"],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {

@@ -1,0 +1,41 @@
+# ---------- Directory index (serve index.html for /route/ URLs) ----------
+DirectoryIndex index.html
+
+# ---------- Compression ----------
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ---------- Caching ----------
+<IfModule mod_headers.c>
+  # Hashed, immutable build assets (JS/CSS/fonts) -> 1 year
+  <FilesMatch "\.(js|css|woff2|woff|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images
+  <FilesMatch "\.(webp|avif|jpe?g|png|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+
+  # HTML -> always revalidate so new deploys show up immediately
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css                  "access plus 1 year"
+  ExpiresByType application/javascript    "access plus 1 year"
+  ExpiresByType text/javascript           "access plus 1 year"
+  ExpiresByType font/woff2                "access plus 1 year"
+  ExpiresByType image/webp                "access plus 1 month"
+  ExpiresByType image/jpeg                "access plus 1 month"
+  ExpiresByType image/png                 "access plus 1 month"
+  ExpiresByType image/svg+xml             "access plus 1 month"
+  ExpiresByType text/html                 "access plus 0 seconds"
+</IfModule>
