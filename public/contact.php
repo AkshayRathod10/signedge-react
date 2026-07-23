@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 
 // Load config from .env one directory above the web root
 $env = [];
-$envPath = __DIR__ . "/../.env";
+$envPath = __DIR__ . "/../../.env";
 if (is_readable($envPath)) {
     $parsed = parse_ini_file($envPath);
     if ($parsed !== false) {
