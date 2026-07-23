@@ -377,7 +377,11 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        containerStyle={{ top: 110, zIndex: 999999 }}
+      />
     </>
   );
 };

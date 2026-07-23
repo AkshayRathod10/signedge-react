@@ -43,7 +43,7 @@ const productItems = [
 
 const Products = () => {
   return (
-    <section id="features" className="pb-10">
+    <section id="features" className="">
       <PageHero
           badge="Product Range"
           heading="Built for Signs."
@@ -64,7 +64,7 @@ const Products = () => {
         
 
         {/* Product rows — separate dark section */}
-        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="my-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {productItems.map((p, i) => (
             <div
               key={i}

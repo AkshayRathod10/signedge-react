@@ -50,8 +50,8 @@ const Footer = () => {
             <Reveal as="div" duration={0.7} delay={0.1} className="lg:pr-12">
               <a href="/" className="mb-6 inline-block">
                 <Image
-                  width={110}
-                  height={80}
+                  width={130}
+                  height={90}
                   src={logoWhite}
                   alt="SignEdge Digitech"
                 />
@@ -68,18 +68,18 @@ const Footer = () => {
                 className="mb-2 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
               >
-                Get in touch
+                <a href="/reach-us">Get in touch</a>
               </p>
-              <a
+              {/* <a
                 href="mailto:info@signedgeindia.com"
                 className="text-sm font-medium text-white/80 transition-colors duration-200 hover:text-white"
               >
                 info@signedgeindia.com
-              </a>
+              </a> */}
             </Reveal>
 
             {/* Quick links */}
-            <Reveal as="div" duration={0.7} delay={0.2} className="lg:pl-8">
+            {/* <Reveal as="div" duration={0.7} delay={0.2} className="lg:pl-8">
               <p
                 className="mb-6 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
@@ -102,10 +102,10 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </Reveal>
+            </Reveal> */}
 
             {/* CTA / tagline column */}
-            <Reveal as="div" duration={0.7} delay={0.3} className="lg:pl-8">
+            {/* <Reveal as="div" duration={0.7} delay={0.3} className="lg:pl-8">
               <p
                 className="mb-6 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
@@ -123,7 +123,7 @@ const Footer = () => {
                 Explore Products
                 <span className="text-[#0bceb7]">→</span>
               </a>
-            </Reveal>
+            </Reveal> */}
           </div>
         </div>
 
@@ -133,7 +133,7 @@ const Footer = () => {
             as="p"
             duration={0.7}
             delay={0.1}
-            className="text-xs text-white/30"
+            className="text text-white"
           >
             © {new Date().getFullYear()} SignEdge Digitech. All rights
             reserved.
@@ -150,11 +150,11 @@ const Footer = () => {
                 <a
                   href={social.href}
                   aria-label={social.label}
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-white/30 transition-all duration-200 hover:border-[#0bceb7]/40 hover:text-[#0bceb7]"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/30 transition-all duration-200 hover:border-[#0bceb7]/40 hover:text-[#0bceb7]"
                 >
                   <svg
-                    width="14"
-                    height="14"
+                    width="20"
+                    height="20"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                   >

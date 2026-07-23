@@ -19,7 +19,7 @@ const promoServices = [
 
 const Services = () => {
   return (
-    <section id="services" className="pb-10">
+    <section id="services" className="">
       <PageHero
           badge="Our Services"
           heading="End-to-End Digital Signage"
@@ -41,7 +41,7 @@ const Services = () => {
 
 
         {/* Service rows — separate dark section */}
-        <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="my-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {promoServices.map((s, i) => (
             <div
               key={i}
