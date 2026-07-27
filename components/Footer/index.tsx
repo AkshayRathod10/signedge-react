@@ -68,7 +68,7 @@ const Footer = () => {
                 className="mb-2 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
               >
-                <a href="/reach-us" className="text-[16px]">Get in touch</a>
+                <a href="/reach-us/" className="text-[16px]">Get in touch</a>
               </p>
               {/* <a
                 href="mailto:info@signedgeindia.com"
@@ -117,7 +117,7 @@ const Footer = () => {
                 impress, engineered to last.
               </p>
               <a
-                href="/products"
+                href="/products/"
                 className="inline-flex items-center gap-2 rounded-full border border-white/10 px-5 py-2.5 text-sm font-medium text-white/80 transition-all duration-200 hover:border-[#0bceb7]/40 hover:text-white"
               >
                 Explore Products

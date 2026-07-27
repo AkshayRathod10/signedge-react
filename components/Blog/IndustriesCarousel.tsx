@@ -173,7 +173,7 @@ const BlogItem = ({ blog }: { blog: Blog }) => {
 
         {/* CTA */}
         <a
-          href="/products"
+          href="/products/"
           className="mt-8 inline-flex w-fit items-center gap-2 text-sm font-medium transition-colors duration-200"
           style={{ color: accentColor }}
           onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.opacity = "0.75")}

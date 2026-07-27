@@ -3,10 +3,10 @@ import BlogItem from "@/components/Blog/BlogItem";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog Page - Solid SaaS Boilerplate",
-
-  // other metadata
-  description: "This is Blog page for Solid Pro"
+  title: "Blog",
+  description:
+    "News, insights and updates from SignEdge India Pvt Ltd.",
+  alternates: { canonical: "/blog/" },
 };
 
 const BlogPage = async () => {

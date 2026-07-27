@@ -2,10 +2,10 @@ import { Metadata } from "next";
 import Contact from "@/components/Contact";
 
 export const metadata: Metadata = {
-  title: "SignEdge India Pvt Ltd - Reach Us",
-
-  // other metadata
-  description: "This is a Contact page for SignEdge India Pvt Ltd."
+  title: "Reach Us",
+  description:
+    "Contact SignEdge India Pvt Ltd — get in touch for signage and branding enquiries.",
+  alternates: { canonical: "/reach-us/" },
 };
 
 export default function ReachUs() {

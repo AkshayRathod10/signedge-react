@@ -29,8 +29,15 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SignEdge India Pvt Ltd.",
-  description: "Built with Next.js and TypeScript",
+  metadataBase: new URL("https://www.signedgeindia.com"),
+  title: {
+    default: "SignEdge India Pvt Ltd.",
+    template: "%s | SignEdge India",
+  },
+  description:
+    "SignEdge India Pvt Ltd — signage, branding and digital solutions.",
+  alternates: { canonical: "/" },
+  robots: { index: true, follow: true },
   icons: {
     icon: "/images/favicon.svg",
   },

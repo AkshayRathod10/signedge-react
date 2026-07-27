@@ -2,10 +2,10 @@ import { Metadata } from "next";
 import Products from "@/components/Products";
 
 export const metadata: Metadata = {
-  title: "SignEdge India Pvt Ltd - Products",
-
-  // other metadata
-  description: "This is a Products page for SignEdge India Pvt Ltd."
+  title: "Products",
+  description:
+    "Explore the range of signage and branding products offered by SignEdge India Pvt Ltd.",
+  alternates: { canonical: "/products/" },
 };
 
 export default function ProductsPage() {

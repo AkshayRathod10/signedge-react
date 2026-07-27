@@ -2,10 +2,9 @@ import Signup from "@/components/Auth/Signup";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Sign Up Page - Solid SaaS Boilerplate",
-
-  // other metadata
-  description: "This is Sign Up page for Startup Pro"
+  title: "Sign Up",
+  description: "Create a SignEdge India account.",
+  robots: { index: false, follow: false },
 };
 
 export default function Register() {

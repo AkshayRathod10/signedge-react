@@ -1,3 +1,18 @@
+# ---------- Canonical host: force HTTPS + www in a SINGLE 301 ----------
+# Prevents duplicate URLs (http/https, www/non-www) and redirect chains that
+# Google reports as "Duplicate without canonical" / "Redirect error".
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # If not HTTPS OR host is missing the www prefix -> one redirect to canonical.
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\. [NC]
+  RewriteRule ^ https://www.signedgeindia.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# ---------- Custom 404 (serve Next.js 404 page) ----------
+ErrorDocument 404 /404.html
+
 # ---------- Directory index (serve index.html for /route/ URLs) ----------
 DirectoryIndex index.html
 
