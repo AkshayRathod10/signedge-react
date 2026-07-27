@@ -95,6 +95,10 @@ $htmlContent = "<!DOCTYPE html>
 
 $mail = new PHPMailer(true);
 try {
+    $mail->SMTPDebug   = SMTP::DEBUG_SERVER;
+    $mail->Debugoutput = function ($str, $level) {
+        error_log("PHPMailer[$level]: $str");
+    };
     $mail->isSMTP();
     $mail->Host       = $smtpHost;
     $mail->SMTPAuth   = true;
@@ -118,6 +122,7 @@ try {
     $mail->AltBody = "Name: $name\nEmail: $email\n\n$message";
 
     $mail->send();
+    error_log("Contact form mail SENT ok. MessageID=" . $mail->getLastMessageID() . " to=" . $toMail);
 } catch (Exception $ex) {
     error_log("Contact form mail error: " . $mail->ErrorInfo);
     http_response_code(502);

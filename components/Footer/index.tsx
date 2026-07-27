@@ -50,25 +50,25 @@ const Footer = () => {
             <Reveal as="div" duration={0.7} delay={0.1} className="lg:pr-12">
               <a href="/" className="mb-6 inline-block">
                 <Image
-                  width={130}
+                  width={150}
                   height={90}
                   src={logoWhite}
                   alt="SignEdge Digitech"
                 />
               </a>
 
-              <p className="mb-8 text-sm leading-relaxed text-white/50">
+              {/* <p className="mb-8 text-sm leading-relaxed text-white/50">
                 India's leading manufacturer of precision LED modules, digital
                 displays, and signage accessories — trusted by 500+ businesses
                 across the country.
-              </p>
+              </p> */}
 
               {/* Contact */}
               <p
                 className="mb-2 text-[11px] uppercase tracking-[4px]"
                 style={{ color: "#0bceb7" }}
               >
-                <a href="/reach-us">Get in touch</a>
+                <a href="/reach-us" className="text-[16px]">Get in touch</a>
               </p>
               {/* <a
                 href="mailto:info@signedgeindia.com"
