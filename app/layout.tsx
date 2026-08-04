@@ -2,7 +2,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import type { Metadata } from "next";
 import Proivder from "./Provider";
-import favIcon from "../assets/images/favicon.svg";
 
 const satoshi = localFont({
   src: [
