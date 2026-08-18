@@ -18,7 +18,7 @@ const BADGES = [
 ];
 
 const STATS = [
-  { value: "50+", label: "Clients Served", color: "#0bceb7" },
+  { value: "100+", label: "Clients Served", color: "#0bceb7" },
   { value: "10+", label: "Years Experience", color: "#f4b400" },
   { value: "3k+", label: "Units Shipped", color: "#f4511e" },
   { value: "24hr", label: "Support", color: "#d81b60" },
@@ -448,7 +448,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
           <div className="hero-left">
             <div className="hero-eyebrow">
               <span className="hero-eyebrow-dot" />
-              <span className="hero-eyebrow-text">India's Leading Signage Manufacturer</span>
+              <span className="hero-eyebrow-text">India's Leading Digital Signage Solutions Company</span>
             </div>
 
             <h1 className="hero-heading">
@@ -457,8 +457,7 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
             </h1>
 
             <p className="hero-desc">
-              SignEdge Digitech crafts precision LED modules, digital displays, and signage
-              accessories trusted by 500+ businesses across India — built to perform, designed to impress.
+              SignEdge Digitech Pvt Ltd crafts precision LED modules, digital displays, and signage solutions, trusted by 100+ businesses across India - built to perform, designed to impress.
             </p>
 
             <div className="hero-cta-row">
@@ -524,7 +523,18 @@ export default function HeroSection({ heroImage }: HeroSectionProps) {
         <div className="hero-marquee-wrap">
           <div className="hero-marquee-track">
             {[...Array(2)].map((_, pass) =>
-              ["LED Modules", "Digital Displays", "Backlit Panels", "Outdoor Hoardings", "Sign Accessories"].map((item, i) => (
+              [
+                "Digital Signage",
+                "LED Displays",
+                "Video Walls",
+                "Interactive Kiosks",
+                "CMS Softwares",
+                "AV Integration",
+                "Smart Displays",
+                "Digital standee",
+                "OPS PC modules",
+                "Active LED display"
+              ].map((item, i) => (
                 <div className="hero-marquee-item" key={`${pass}-${i}`}>
                   <span className="hero-marquee-dot" style={{ background: "#0bceb7" }} />
                   {item}
